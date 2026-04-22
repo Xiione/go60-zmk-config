@@ -1,0 +1,185 @@
+;;
+;; kanata config for enthium with layers
+;;
+
+(defcfg 
+  process-unmapped-keys no
+  concurrent-tap-hold yes
+  macos-dev-names-include (
+      "Apple Internal Keyboard / Trackpad"
+      "SteelSeries Apex Pro TKL"
+    )
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  nubs 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret
+  caps a    s    d    f    g    h    j    k    l    ;    '    \
+  lsft grv  z    x    c    v    b    n    m    ,    .    /    up   rsft 
+  fn   lctl lalt lmeta      spc                rmeta ralt left down right 
+)
+
+(defvar
+  enthium-left-hand-keys (
+    q y o u =
+    b c i a e -
+    ' , . ; / spc
+  )
+  enthium-right-hand-keys (
+    x l d p z
+    k h t n s w
+    j m g f v r
+  )
+  hold-timeout 300
+  ht $hold-timeout
+)
+
+(defhands
+  (left  q w e r t a s d f g z x c v b)
+  (right y u i o p h j k l ; n m , . /))
+
+(defalias
+  mc  C-up ;; Mission Control
+  sls M-spc ;; Spotlight Search
+  qwr (layer-switch qwerty) ;; QWERTY layer
+  ent (layer-switch enthium) ;; Enthium layer
+  ctr (layer-while-held control) ;; Control layer
+  sym (layer-while-held symbols) ;; Symbol layer
+  world (layer-while-held world) ;; World layer
+
+  grl (tap-hold $ht $ht grv (layer-while-held layers)) ;; Hold grave for layer switching
+  nubs (tap-hold $ht $ht nubs (layer-while-held layers)) ;; Hold nubs for layer switching
+  spc (tap-hold-press-timeout $ht 9999 spc @ctr spc) ;; Space with Control layer
+  ret (tap-hold-press-timeout $ht 9999 ret @sym ret) ;; Return with Symbol layer
+  tab (tap-hold-press-timeout $ht 9999 tab @sym tab) ;; Tab with Symbol layer
+  esc (tap-hold-press-timeout $ht 9999 esc @sym esc) ;; Escape with Symbol layer
+  rsym   (tap-hold-press-timeout $ht 9999 r @sym r) ;; r with Symbol layer
+  wret   (tap-hold-press-timeout $ht 9999 ret @world ret) ;; return with World layer
+
+  ;; Home row mods for canary layout
+  c (tap-hold-release-keys $ht $ht c lctl $enthium-right-hand-keys)    ;; C with Control
+  i (tap-hold-release-keys $ht $ht i lalt $enthium-right-hand-keys)    ;; I with Alt
+  a (tap-hold-release-keys $ht $ht a lmet $enthium-right-hand-keys)    ;; A with Meta
+  e (tap-hold-release-keys $ht $ht e lsft $enthium-right-hand-keys)    ;; E with Shift
+  h (tap-hold-release-keys $ht $ht h rsft $enthium-right-hand-keys)   ;; H with Shift
+  t (tap-hold-release-keys $ht $ht t rmet $enthium-right-hand-keys)   ;; T with Meta
+  n (tap-hold-release-keys $ht $ht n ralt $enthium-right-hand-keys)   ;; N with Alt
+  s (tap-hold-release-keys $ht $ht s rctl $enthium-right-hand-keys)   ;; S with Control
+  lctl (tap-hold-release-keys $ht $ht esc lctl $enthium-right-hand-keys)   ;; Escape with Control
+
+  osls (one-shot-release 2000 lsft)
+  oslc (one-shot-release 2000 lctl)
+  osla (one-shot-release 2000 lalt)
+  oslm (one-shot-release 2000 lmet)
+  osrs (one-shot-release 2000 rsft)
+  osrc (one-shot-release 2000 rctl)
+  osra (one-shot-release 2000 ralt)
+  osrm (one-shot-release 2000 rmet)
+
+  swo (switch 
+    ((and lalt (or lsft rsft))) (unicode Õ) break
+    (lalt) (unicode õ) break
+    ((and ralt (or lsft rsft))) (unicode Ø) break
+    (ralt) (unicode ø) break
+    ((and rctl (or lsft rsft))) (unicode Ó) break
+    (rctl) (unicode ó) break
+    ((and lctl (or lsft rsft))) (unicode Ò) break
+    (lctl) (unicode ò) break
+    ((or lsft rsft)) (unicode Ö) break
+    () (unicode ö) break
+  )
+  swa (switch 
+    ((and lalt (or lsft rsft))) (unicode Ã) break
+    (lalt) (unicode ã) break
+    ((and ralt (or lsft rsft))) (unicode Å) break
+    (ralt) (unicode å) break
+    ((and lctl (or lsft rsft))) (unicode À) break
+    (lctl) (unicode à) break
+    ((and rctl (or lsft rsft))) (unicode Á) break
+    (rctl) (unicode á) break
+    ((or lsft rsft)) (unicode Ä) break
+    () (unicode ä) break
+  )
+  swu (switch 
+    ((and lalt (or lsft rsft))) (unicode Û) break
+    (lalt) (unicode û) break
+    ((and lctl (or lsft rsft))) (unicode Ù) break
+    (lctl) (unicode ù) break
+    ((and rctl (or lsft rsft))) (unicode Ú) break
+    (rctl) (unicode ú) break
+    ((or lsft rsft)) (unicode Ü) break
+    () (unicode ü) break
+  )
+  swsz (switch 
+    ((and lctl (or lsft rsft))) (unicode Ç) break
+    (lctl) (unicode ç) break
+    ((and rctl (or lsft rsft))) (unicode Ñ) break
+    (rctl) (unicode ñ) break
+    () (unicode ß) break
+  )
+  mdcode (macro ` ` `)
+)
+
+(defchordsv2
+  (s d) tab 50 all-released (qwerty symbols layers)
+  (k l) bspc 50 all-released (qwerty symbols layers)
+)
+
+(deflayer qwerty
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  @nubs  1    2    3    4    5    6    7    8    9    0    -    =   bspc
+  @tab   q    w    e    r    t    y    u    i    o    p    [    ]   @ret  
+  caps   a    s    d    f    g    h    j    k    l    ;    '    \   
+  lsft   grv  z    x    c    v    b    n    m    ,    .    /    up  rsft
+  fn    lctl  lalt  lmet         @spc         rmet  ralt  left down right
+)
+
+(deflayer enthium
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  @grl   1    2    3    4    5    6    7    8    9    0    caps ralt bspc
+  tab    q    y    o    u    =    x    l    d    p    z    [    ]    ret
+   b    @c   @i   @a   @e    -    k   @h   @t   @n   @s    w    \
+  lsft   '    ,    .   ;     /    j    m    g    f    v    rctl up   rsft  
+  fn    lctl lalt @esc      @spc           @rsym     @wret left down right 
+)
+
+(deflayer world
+  _     _     _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
+  _     _     _   @swo  @swu  _    _    _   @osla @osra  _    _    _    _
+  _   @swsz  XX  @swa   XX   _    _  @osls @oslc @osrc  @osrs  _  _
+  lsft  _     _    _    _    _    _    _    _    _    _    rctl up   rsft  
+  fn    lctl lalt @esc      @spc              _     @wret left down right 
+)
+
+(deflayer control
+  _     _     _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
+  _     1     2    3    4    5    6    7    8    9    0    _    _    _
+  _    @lctl lalt lsft lmet  _    _    lft  down up   rght ret  _
+  _     _     _    _    _    _    home pgdn pgup end  _    _    _    _
+  _     _     _    _           _              _      _     _    _    _
+)
+
+;;  !  (  )  {  %    ^  }  [  ]  "
+;;  ;  @  &  $  +    <  -  =  >  :
+;;  ~  #  |  /  *    \  _  ?  '  `
+
+(deflayer symbols
+  _     _     _    _    _    _    _    _    _    _    _    _    _
+  _     `    S-9  S-0   ;    ,    _    _    _    _    _    _    _    _
+  S-1   [    S-[  S-]  ]    S-/   .   del S-tab  ins  esc  _    _    _
+  S-3  S-6    =   S--  S-4  S-8   ,   bspc  tab  spc  ret  @mdcode    	
+  S-`  S-,   S-\   -   S-.   /    ;   S-,    '    `    \    _    _    _
+  _    S-7    '   S-'  S-=       ret         _        _     _    _    _
+)
+
+(deflayer layers
+  _     _     _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
+  _    @qwr  @ent  _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _	
+  _     _    lrld  _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _            ret         _         _    _    _    _
+)
