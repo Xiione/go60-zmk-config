@@ -931,10 +931,10 @@
 / {
 // NOTE: Use the many #define settings below to customize this keymap!
 #define OPERATING_SYSTEM 'M' // choose 'L'inux, 'M'acOS, or 'W'indows
-#define DIFFICULTY_LEVEL  0  // 0:custom, 1:easy -> 5:hard (see below)
+#define DIFFICULTY_LEVEL  3  // 0:custom, 1:easy -> 5:hard (see below)
 #define ENABLE_MOUSE_KEYS    // requires HID_POINTING override to "y"
-//#define ENFORCE_BILATERAL    // cancels single-handed home row mod+tap
-#define SPACE_FORGIVENESS  // allow lingering taps on the space bar
+#define ENFORCE_BILATERAL    // cancels single-handed home row mod+tap
+//#define SPACE_FORGIVENESS  // allow lingering taps on the space bar
 //#define THUMB_FORGIVENESS  // allow lingering taps on the thumb keys
 //#define SHIFT_FORGIVENESS  // requires v24.08-beta or newer firmware
 #define NATURAL_SCROLLING  // supports "natural scrolling" in macOS
@@ -1554,10 +1554,10 @@ combos {
   };
   #endif
 
-  combo_hyper_GACS_right {
+  combo_alt_tab_switcher_right {
     timeout-ms = <COMBO_FIRING_DECAY>;
     key-positions = <POS_RH_T1 POS_RH_T2>;
-    bindings = <&kp LG(LA(LC(LSHFT)))>;
+    bindings = <&mod_tab_chord _A_TAB LAYER_Cursor>;
     layers = <0 1 2 3 4>;
   };
 
@@ -1566,14 +1566,14 @@ combos {
   combo_caps_word_left {
     timeout-ms = <COMBO_FIRING_DECAY>;
     key-positions = <POS_LH_T2 POS_LH_T3>;
-    bindings = <&caps_word>;
+    bindings = <&kp CAPSLOCK>;
     layers = <0 1 2 3 4 5>;
   };
 
   combo_caps_word_right {
     timeout-ms = <COMBO_FIRING_DECAY>;
     key-positions = <POS_RH_T2 POS_RH_T3>;
-    bindings = <&caps_word>;
+    bindings = <&kp CAPSLOCK>;
     layers = <0 1 2 3 4 5>;
   };
 
@@ -1582,14 +1582,14 @@ combos {
   combo_caps_lock_left {
     timeout-ms = <COMBO_FIRING_DECAY>;
     key-positions = <POS_LH_T1 POS_LH_C2R5>;
-    bindings = <&kp CAPSLOCK>;
+    bindings = <&caps_word>;
     layers = <0 1 2 3 4 5>;
   };
 
   combo_caps_lock_right {
     timeout-ms = <COMBO_FIRING_DECAY>;
     key-positions = <POS_RH_T1 POS_RH_C2R5>;
-    bindings = <&kp CAPSLOCK>;
+    bindings = <&caps_word>;
     layers = <0 1 2 3 4 5>;
   };
 
@@ -10550,17 +10550,17 @@ macros {
         layer_Enthium {
             bindings = <
          &magic LAYER_Magic 0                         &kp N1                         &kp N2                         &kp N3                         &kp N4     &kp N5                                                                                                                                                                 &kp N6                          &kp N7                          &kp N8                          &kp N9                          &kp N0          &magic LAYER_Magic 0
-                     &kp BSLH                          &kp Q                          &kp Y                          &kp O                          &kp U  &kp EQUAL                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                     &kp GRAVE
+              &mt GLOBE GRAVE                          &kp Q                          &kp Y                          &kp O                          &kp U  &kp EQUAL                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                &mt GLOBE BSLH
                         &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (A, LAYER_Enthium)  &LeftIndex (E, LAYER_Enthium)  &kp MINUS                                                                                                                                                                  &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
  &sticky_key_modtap LSFT LSFT                        &kp SQT                      &kp COMMA                        &kp DOT                       &kp SEMI   &kp FSLH                                                                                                                                                                  &kp J                           &kp M                           &kp G                           &kp F                           &kp V  &sticky_key_modtap RSFT RSFT
                                                                                &parang_left                  &parang_right        &stumb LAYER_Emoji LSFT                                                                                                                                                                                           &stumb LAYER_World RSFT                        &kp LBKT                        &kp RBKT
-                                                                                                                                                                      &thumb LAYER_Function ESC  &thumb LAYER_Cursor SPACE  &thumb LAYER_Number TAB  &thumb LAYER_Mouse BACKSPACE  &space LAYER_Symbol R  &thumb LAYER_System ENTER
+                                                                                                                                                                      &thumb LAYER_Number TAB  &thumb LAYER_Cursor SPACE  &thumb LAYER_Function ESC  &thumb LAYER_System ENTER  &space LAYER_Symbol R  &thumb LAYER_Mouse BACKSPACE
             >;
         };
 
         layer_QWERTY {
             bindings = <
-                        &none                        &kp N1                        &kp N2                        &kp N3                        &kp N4  &kp N5                                                                                                                                        &kp N6                         &kp N7                         &kp N8                         &kp N9                            &kp N0                         &none
+         &magic LAYER_Magic 0                        &kp N1                        &kp N2                        &kp N3                        &kp N4  &kp N5                                                                                                                                        &kp N6                         &kp N7                         &kp N8                         &kp N9                            &kp N0          &magic LAYER_Magic 0
                         &none                         &kp Q                         &kp W                         &kp E                         &kp R   &kp T                                                                                                                                         &kp Y                          &kp U                          &kp I                          &kp O                             &kp P                     &kp MINUS
                     &kp EQUAL  &LeftPinky (A, LAYER_QWERTY)  &LeftRingy (S, LAYER_QWERTY)  &LeftMiddy (D, LAYER_QWERTY)  &LeftIndex (F, LAYER_QWERTY)   &kp G                                                                                                                                         &kp H  &RightIndex (J, LAYER_QWERTY)  &RightMiddy (K, LAYER_QWERTY)  &RightRingy (L, LAYER_QWERTY)  &RightPinky (SEMI, LAYER_QWERTY)                       &kp SQT
  &sticky_key_modtap LSFT LSFT                         &kp Z                         &kp X                         &kp C                         &kp V   &kp B                                                                                                                                         &kp N                          &kp M                      &kp COMMA                        &kp DOT                          &kp FSLH  &sticky_key_modtap RSFT RSFT
@@ -10587,7 +10587,7 @@ macros {
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                                            &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
  &trans              &trans              &trans              &trans              &trans  &trans                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
                                          &trans              &trans     &kp KEY_LH_C2R6                                                                                                                &kp KEY_RH_C2R6               &trans               &trans
-                                                                                                 &kp KEY_LH_T1  &kp KEY_LH_T4  &kp KEY_LH_T5  &kp KEY_RH_T5  &kp KEY_RH_T4  &kp KEY_RH_T1
+                                                                                                 &kp KEY_LH_T5  &kp KEY_LH_T4  &kp KEY_LH_T1  &kp KEY_RH_T1  &kp KEY_RH_T4  &kp KEY_RH_T5
             >;
         };
 
@@ -10598,7 +10598,7 @@ macros {
  &left_pinky_tap KEY_LH_C6R4                        &none              &LeftPinkyRingy              &LeftPinkyMiddy              &LeftPinkyIndex  &left_pinky_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_pinky_tap KEY_LH_C5R5  &left_pinky_tap KEY_LH_C4R5  &left_pinky_tap KEY_LH_C3R5  &left_pinky_tap KEY_LH_C2R5  &left_pinky_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_pinky_tap KEY_LH_C4R6  &left_pinky_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
-                                                                                                                                                                               &mo LAY_LH_T1  &mo LAY_LH_T4  &mo LAY_LH_T5  &trans  &trans  &trans
+                                                                                                                                                                               &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
             >;
         };
 
@@ -10609,7 +10609,7 @@ macros {
  &left_ringy_tap KEY_LH_C6R4              &LeftRingyPinky                        &none              &LeftRingyMiddy              &LeftRingyIndex  &left_ringy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_ringy_tap KEY_LH_C5R5  &left_ringy_tap KEY_LH_C4R5  &left_ringy_tap KEY_LH_C3R5  &left_ringy_tap KEY_LH_C2R5  &left_ringy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_ringy_tap KEY_LH_C4R6  &left_ringy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
-                                                                                                                                                                               &mo LAY_LH_T1  &mo LAY_LH_T4  &mo LAY_LH_T5  &trans  &trans  &trans
+                                                                                                                                                                               &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
             >;
         };
 
@@ -10620,7 +10620,7 @@ macros {
  &left_middy_tap KEY_LH_C6R4              &LeftMiddyPinky              &LeftMiddyRingy                        &none              &LeftMiddyIndex  &left_middy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_middy_tap KEY_LH_C5R5  &left_middy_tap KEY_LH_C4R5  &left_middy_tap KEY_LH_C3R5  &left_middy_tap KEY_LH_C2R5  &left_middy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_middy_tap KEY_LH_C4R6  &left_middy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
-                                                                                                                                                                               &mo LAY_LH_T1  &mo LAY_LH_T4  &mo LAY_LH_T4  &trans  &trans  &trans
+                                                                                                                                                                               &mo LAY_LH_T4  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
             >;
         };
 
@@ -10631,7 +10631,7 @@ macros {
  &left_index_tap KEY_LH_C6R4              &LeftIndexPinky              &LeftIndexRingy              &LeftIndexMiddy                        &none  &left_index_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_index_tap KEY_LH_C5R5  &left_index_tap KEY_LH_C4R5  &left_index_tap KEY_LH_C3R5  &left_index_tap KEY_LH_C2R5  &left_index_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_index_tap KEY_LH_C4R6  &left_index_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
-                                                                                                                                                                               &mo LAY_LH_T1  &mo LAY_LH_T4  &mo LAY_LH_T5  &trans  &trans  &trans
+                                                                                                                                                                               &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
             >;
         };
 
@@ -10642,7 +10642,7 @@ macros {
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_index_tap KEY_RH_C1R4                         &none              &RightIndexMiddy              &RightIndexRingy              &RightIndexPinky  &right_index_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_index_tap KEY_RH_C1R5  &right_index_tap KEY_RH_C2R5  &right_index_tap KEY_RH_C3R5  &right_index_tap KEY_RH_C4R5  &right_index_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_index_tap KEY_RH_C3R6  &right_index_tap KEY_RH_C4R6
-                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T5  &mo LAY_RH_T4  &mo LAY_RH_T1
+                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
             >;
         };
 
@@ -10653,7 +10653,7 @@ macros {
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_middy_tap KEY_RH_C1R4              &RightMiddyIndex                         &none              &RightMiddyRingy              &RightMiddyPinky  &right_middy_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_middy_tap KEY_RH_C1R5  &right_middy_tap KEY_RH_C2R5  &right_middy_tap KEY_RH_C3R5  &right_middy_tap KEY_RH_C4R5  &right_middy_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_middy_tap KEY_RH_C3R6  &right_middy_tap KEY_RH_C4R6
-                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T5  &mo LAY_RH_T4  &mo LAY_RH_T1
+                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
             >;
         };
 
@@ -10664,7 +10664,7 @@ macros {
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_ringy_tap KEY_RH_C1R4              &RightRingyIndex              &RightRingyMiddy                         &none              &RightRingyPinky  &right_ringy_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_ringy_tap KEY_RH_C1R5  &right_ringy_tap KEY_RH_C2R5  &right_ringy_tap KEY_RH_C3R5  &right_ringy_tap KEY_RH_C4R5  &right_ringy_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_ringy_tap KEY_RH_C3R6  &right_ringy_tap KEY_RH_C4R6
-                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T5  &mo LAY_RH_T4  &mo LAY_RH_T1
+                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
             >;
         };
 
@@ -10675,7 +10675,7 @@ macros {
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_pinky_tap KEY_RH_C1R4              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRingy                         &none  &right_pinky_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_pinky_tap KEY_RH_C1R5  &right_pinky_tap KEY_RH_C2R5  &right_pinky_tap KEY_RH_C3R5  &right_pinky_tap KEY_RH_C4R5  &right_pinky_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_pinky_tap KEY_RH_C3R6  &right_pinky_tap KEY_RH_C4R6
-                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T5  &mo LAY_RH_T4  &mo LAY_RH_T1
+                                                                                                 &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
             >;
         };
 
@@ -10692,11 +10692,11 @@ macros {
 
         layer_Cursor {
             bindings = <
- &kp _C(K)             &kp ESC             &kp INS         &kp LS(TAB)             &kp DEL       &none                                                                                    &none        &none           &none           &none      &none  &kp _C(K)
- &kp _UNDO             &kp RET           &kp SPACE             &kp TAB            &kp BSPC    &kp _CUT                                                                                 &kp _CUT  &kp LS(TAB)       &kp _UNDO       &kp _REDO    &kp TAB  &kp _C(H)
- &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY                                                                                &kp _COPY     &kp LEFT          &kp UP        &kp DOWN  &kp RIGHT  &sk LSHFT
- &kp _C(L)         &select_all        &select_line        &select_word           &kp _FIND  &kp _PASTE                                                                               &kp _PASTE    &kp _HOME       &kp PG_UP       &kp PG_DN   &kp _END  &kp _C(L)
-                                         &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT                                                                                                         &kp _FIND  &kp _FIND_PREV  &kp _FIND_NEXT
+ &kp _C(K)             &kp ESC             &kp INS         &kp LS(TAB)             &kp DEL       &none                                                                                    &none      &none           &none           &none        &none  &kp _C(K)
+ &kp _UNDO             &kp RET           &kp SPACE             &kp TAB            &kp BSPC    &kp _CUT                                                                                 &kp _CUT  &kp _UNDO          &kp UP       &kp _REDO      &kp TAB  &kp _C(H)
+ &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY                                                                                &kp _COPY   &kp LEFT        &kp DOWN       &kp RIGHT  &kp LS(TAB)  &sk LSHFT
+ &kp _C(L)         &select_all        &select_line        &select_word           &kp _FIND  &kp _PASTE                                                                               &kp _PASTE  &kp _HOME       &kp PG_UP       &kp PG_DN     &kp _END  &kp _C(L)
+                                         &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT                                                                                                       &kp _FIND  &kp _FIND_PREV  &kp _FIND_NEXT
                                                                                                          &none  &tog LAYER_Cursor   &none  &select_none  &extend_line  &extend_word
             >;
         };
@@ -10708,7 +10708,7 @@ macros {
   &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD       &kp X                                                                                   &kp K      &kp N4      &kp N5      &kp N6      &kp MINUS  &kp LS(EQUAL)
   &kp _UNDO         &select_all        &select_line        &select_word           &kp _FIND       &kp F                                                                                   &kp J      &kp N1      &kp N2      &kp N3       &kp FSLH     &kp LS(N8)
                                           &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT                                                                                                       &kp EQUAL    &kp LBKT    &kp RBKT
-                                                                                                         &kp LS(N2)  &kp LS(MINUS)  &tog LAYER_Number  &kp COMMA  &kp N0  &kp DOT
+                                                                                                         &tog LAYER_Number  &kp LS(MINUS)  &kp LS(N2)  &kp COMMA  &kp N0  &kp DOT
             >;
         };
 
@@ -10719,7 +10719,7 @@ macros {
  &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp K_WWW                                                                                      &kp K_WWW      &kp F4        &kp F5        &kp F6     &kp F11      &kp F14
  &kp _UNDO         &select_all        &select_line        &select_word           &kp _FIND  &kp _FILES                                                                                     &kp _FILES      &kp F1        &kp F2        &kp F3     &kp F12      &kp F15
                                          &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT                                                                                                               &kp C_PP  &kp C_BRI_UP  &kp C_BRI_DN
-                                                                                                        &tog LAYER_Function   &none   &none  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE
+                                                                                                         &none   &none  &tog LAYER_Function  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE
             >;
         };
 
@@ -10752,7 +10752,7 @@ macros {
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT          &mmv MOVE_UP        &mmv MOVE_DOWN          &mmv MOVE_RIGHT  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK  &tog LAYER_Mouse   &none   &none
+                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10882,9 +10882,9 @@ macros {
         &none     &kp C_BRI_DN     &kp C_BRI_UP       &kp C_PREV       &kp C_NEXT         &kp C_PP                                                                    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none           &none         &none
   &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                                         &none         &none         &none   &none           &none   &bootloader
    &sys_reset  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                                         &none         &none         &none   &none           &none    &sys_reset
- &out OUT_TOG       &bt BT_CLR            &bt_0            &bt_1            &bt_2            &bt_3                                                                         &none         &none         &none   &none  &bt BT_CLR_ALL  &out OUT_TOG
+ &out OUT_TOG       &bt BT_CLR            &bt_0            &bt_1            &bt_2            &bt_3                                                                         &none         &to 0         &to 1   &none  &bt BT_CLR_ALL  &out OUT_TOG
                                    &out OUT_USB            &none            &none                                                                                                        &none         &none   &none
-                                                                                                     &to 1   &to 0  &to LAYER_macOS  &to LAYER_macOS   &to 0   &to 1
+                                                                                                     &none   &none  &to LAYER_macOS  &to LAYER_macOS   &none   &none
             >;
         };
 
