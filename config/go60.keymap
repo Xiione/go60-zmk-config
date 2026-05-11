@@ -758,11 +758,11 @@
     };
     layer_Mouse_fast {
         layers = <LAYER_Mouse_fast>;
-        input-processors = <&zip_xy_scaler 13 3>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 250>;
     };
     layer_Mouse_warp {
         layers = <LAYER_Mouse_warp>;
-        input-processors = <&zip_xy_scaler 6 1>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 13 3>, <&zip_temp_layer LAYER_Mouse 250>;
     };
     layer_Mouse_to_scroll {
         layers = <LAYER_Mouse_to_scroll>;
@@ -938,7 +938,7 @@
 //#define THUMB_FORGIVENESS  // allow lingering taps on the thumb keys
 //#define SHIFT_FORGIVENESS  // requires v24.08-beta or newer firmware
 #define NATURAL_SCROLLING  // supports "natural scrolling" in macOS
-//#define WORLD_USE_COMPOSE  // use native Compose in place of Unicode
+#define WORLD_USE_COMPOSE  // use native Compose in place of Unicode
 //#define WORLD_HOST_AZERTY  // host computer is set to AZERTY locale
 //#define WORLD_SHIFT_NUMBER // apply Shift to type number row digits
 // TIP: Add more setting overrides here instead of editing them below.
