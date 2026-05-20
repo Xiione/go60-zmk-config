@@ -16,8 +16,8 @@
   nubs 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret
   caps a    s    d    f    g    h    j    k    l    ;    '    \
-  lsft grv  z    x    c    v    b    n    m    ,    .    /    up   rsft 
-  fn   lctl lalt lmeta      spc                rmeta ralt left down right 
+  lsft grv  z    x    c    v    b    n    m    ,    .    /     rsft 
+  fn   lctl lalt lmeta      spc                rmeta ralt  ◀   ▲ ▼    ▶
 )
 
 (defvar
@@ -40,13 +40,12 @@
   (right y u i o p h j k l ; n m , . /))
 
 (defalias
-  mc  C-up ;; Mission Control
-  sls M-spc ;; Spotlight Search
   qwr (layer-switch qwerty) ;; QWERTY layer
   ent (layer-switch enthium) ;; Enthium layer
   ctr (layer-while-held control) ;; Control layer
   sym (layer-while-held symbols) ;; Symbol layer
   world (layer-while-held world) ;; World layer
+  func  (layer-while-held function) ;; Function layer
 
   grl (tap-hold $ht $ht grv (layer-while-held layers)) ;; Hold grave for layer switching
   nubs (tap-hold $ht $ht nubs (layer-while-held layers)) ;; Hold nubs for layer switching
@@ -131,8 +130,8 @@
   @nubs  1    2    3    4    5    6    7    8    9    0    -    =   bspc
   @tab   q    w    e    r    t    y    u    i    o    p    [    ]   @ret  
   caps   a    s    d    f    g    h    j    k    l    ;    '    \   
-  lsft   grv  z    x    c    v    b    n    m    ,    .    /    up  rsft
-  fn    lctl  lalt  lmet         @spc         rmet  ralt  left down right
+  lsft   grv  z    x    c    v    b    n    m    ,    .    /     rsft
+  @func    lctl  lalt  lmet         @spc         rmet  ralt  ◀    ▲ ▼    ▶
 )
 
 (deflayer enthium
@@ -140,8 +139,8 @@
   @grl   1    2    3    4    5    6    7    8    9    0    caps ralt bspc
   tab    q    y    o    u    =    x    l    d    p    z    [    ]    ret
    b    @c   @i   @a   @e    -    k   @h   @t   @n   @s    w    \
-  lsft   '    ,    .   ;     /    j    m    g    f    v    rctl up   rsft  
-  fn    lctl lalt @esc      @spc           @rsym     @wret left down right 
+  lsft   '    ,    .   ;     /    j    m    g    f    v    rctl   rsft  
+  @func    lctl lalt @esc      @spc           @rsym     @wret ◀    ▲ ▼    ▶
 )
 
 (deflayer world
@@ -149,17 +148,26 @@
   _     _     _    _    _    _    _    _    _    _    _    _    _    _
   _     _     _   @swo  @swu  _    _    _   @osla @osra  _    _    _    _
   _   @swsz  XX  @swa   XX   _    _  @osls @oslc @osrc  @osrs  _  _
-  lsft  _     _    _    _    _    _    _    _    _    _    rctl up   rsft  
-  fn    lctl lalt @esc      @spc              _     @wret left down right 
+  lsft  _     _    _    _    _    _    _    _    _    _    rctl rsft  
+  _    lctl lalt @esc          @spc              _     @wret  ◀    ▲ ▼    ▶
+)
+
+(deflayer function
+  _     🔅    🔆  bldn blup  _    _   ◀◀   ▶⏸    ▶▶   🔇   🔉   🔊 
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _  
+  _     _     _    _         _              _         ⤒    ⇞    ⇟    ⤓
 )
 
 (deflayer control
   _     _     _    _    _    _    _    _    _    _    _    _    _
   _     _     _    _    _    _    _    _    _    _    _    _    _    _
   _     1     2    3    4    5    6    7    8    9    0    _    _    _
-  _    @lctl lalt lsft lmet  _    _    lft  down up   rght ret  _
-  _     _     _    _    _    _    home pgdn pgup end  _    _    _    _
-  _     _     _    _           _              _      _     _    _    _
+  _    @lctl lalt lsft lmet  _    _    ◀    ▲    ▼    ▶   ret  _
+  _     _     _    _    _    _    ⤒    ⇞    ⇟    ⤓    _    _    _    _
+  _     _     _    _           _              _       ◀    ▲ ▼    ▶
 )
 
 ;;  !  (  )  {  %    ^  }  [  ]  "
@@ -178,8 +186,8 @@
 (deflayer layers
   _     _     _    _    _    _    _    _    _    _    _    _    _
   _     _     _    _    _    _    _    _    _    _    _    _    _    _
-  _    @qwr  @ent  _    _    _    _    _    _    _    _    _    _    _
+  _    @qwr   _  @ent lrld   _    _    _    _    _    _    _    _    _
   _     _     _    _    _    _    _    _    _    _    _    _    _	
-  _     _    lrld  _    _    _    _    _    _    _    _    _    _    _
+  _     _     _    _    _    _    _    _    _    _    _    _    _    _
   _     _     _    _            ret         _         _    _    _    _
 )
