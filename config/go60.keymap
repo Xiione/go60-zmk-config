@@ -10616,10 +10616,10 @@ macros {
 
         layer_Cursor {
             bindings = <
- &kp _C(K)             &kp ESC             &kp INS         &kp LS(TAB)             &kp DEL       &none                                                                                    &none      &none           &none           &none        &none  &kp _C(K)
- &kp _UNDO             &kp RET           &kp SPACE             &kp TAB            &kp BSPC    &kp _CUT                                                                                 &kp _CUT  &kp _UNDO          &kp UP       &kp _REDO      &kp TAB  &kp _C(H)
- &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY                                                                                &kp _COPY   &kp LEFT        &kp DOWN       &kp RIGHT  &kp LS(TAB)  &sk LSHFT
- &kp _C(L)         &select_all        &select_line        &select_word           &kp _FIND  &kp _PASTE                                                                               &kp _PASTE  &kp _HOME       &kp PG_UP       &kp PG_DN     &kp _END  &kp _C(L)
+ &kp _C(K)             &kp ESC             &kp INS         &kp LS(TAB)             &kp DEL       &none                                                                                    &none      &none           &none           &none      &none    &kp _C(K)
+ &kp _UNDO             &kp RET           &kp SPACE             &kp TAB            &kp BSPC    &kp _CUT                                                                                 &kp _CUT  &kp _UNDO          &kp UP       &kp PG_UP    &kp TAB  &kp LS(TAB)
+ &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY                                                                                &kp _COPY   &kp LEFT        &kp DOWN       &kp RIGHT  &kp _HOME    &sk LSHFT
+ &kp _C(L)         &select_all        &select_line        &select_word           &kp _FIND  &kp _PASTE                                                                               &kp _PASTE  &kp _REDO       &kp _C(H)       &kp PG_DN   &kp _END    &kp _C(L)
                                          &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT                                                                                                       &kp _FIND  &kp _FIND_PREV  &kp _FIND_NEXT
                                                                                                          &none  &tog LAYER_Cursor   &none  &select_none  &extend_line  &extend_word
             >;
