@@ -338,13 +338,21 @@
       compatible  = "zmk,underglow-layer";
 
       /*
+      Go60 final-row binding order follows the POS_* definitions:
+
+        L_C4R5 L_C3R5 L_C2R5     R_C2R5 R_C3R5 R_C4R5     L_T1 L_T2 L_T3     R_T3 R_T2 R_T1
+
+      On the Enthium base layer the apparent thumbs are:
+        L_T1=Tab, L_T2=Space, L_T3=Esc, R_T1=Backspace, R_T2=R, R_T3=Enter.
+
       Template {
         bindings = <
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___     ___ ___ ___     ___ ___ ___     ___ ___ ___ ___ ___ ___
-                  ___ ___ ___         ___ ___ ___     ___ ___ ___         ___ ___ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Template>;
       };
@@ -356,7 +364,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BSL     LAC LAC LAC         LAC ___ ___        
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <0>;
       };
@@ -368,7 +377,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ GRN CYN MAJ YLW ___                                     ___ YLW MAJ CYN GRN ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BSL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_macOS>;
       };
@@ -381,7 +391,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BSL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ LAC                                             ___ ___ ___
+                              LAC LAC LAC                     ___ ___ ___
         >;
         layer-id = <LAYER_LeftPinky>;
       };
@@ -394,7 +405,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ LAC                                             ___ ___ ___
+                              LAC LAC LAC                     ___ ___ ___
         >;
         layer-id = <LAYER_LeftRingy>;
       };
@@ -407,7 +419,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ LAC                                             ___ ___ ___
+                              LAC LAC LAC                     ___ ___ ___
         >;
         layer-id = <LAYER_LeftMiddy>;
       };
@@ -420,7 +433,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ LAC                                             ___ ___ ___
+                              LAC LAC LAC                     ___ ___ ___
         >;
         layer-id = <LAYER_LeftIndex>;
       };
@@ -433,7 +447,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              ___ ___ ___                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightIndex>;
       };
@@ -446,7 +461,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              ___ ___ ___                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightMiddy>;
       };
@@ -459,7 +475,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              ___ ___ ___                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightRingy>;
       };
@@ -472,7 +489,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC         LAC BSL BNL     LAC LAC LAC         LAC ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              ___ ___ ___                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightPinky>;
       };
@@ -485,7 +503,8 @@
           ___ COR COR COR COR GDN                                     GDN COR PUR PUR COR ___
           YLW MAJ CYN GRN YLW GDN                                     GDN AZU AZU AZU AZU YLW
           PNK SPG SPG SPG PUR GDN                                     GDN AZU AZU AZU AZU PNK
-                  PUR PUR PUR         COR RED ___     SPG SPG SPG         PUR PUR PUR
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ RED ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Cursor>;
       };
@@ -498,7 +517,8 @@
           GDN COR COR COR COR GOL                                     TEA GOL GOL GOL SPG SPG
           YLW MAJ CYN GRN YLW TEA                                     TEA GOL GOL GOL SPG SPG
           TEA SPG SPG SPG PUR GDN                                     TEA GOL GOL GOL SPG SPG
-                  PUR PUR PUR         ___ ___ RED     GOL SPG SPG         SPG SPG SPG
+                  ___ ___ ___                                             ___ ___ ___
+                              RED ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Number>;
       };
@@ -511,7 +531,8 @@
           ___ COR COR COR COR GDN                                     GDN PNK PNK PNK PNK PNK
           YLW MAJ CYN GRN YLW GDN                                     GDN PNK PNK PNK PNK PNK
           ___ SPG SPG SPG PUR GDN                                     GDN PNK PNK PNK PNK PNK
-                  PUR PUR PUR         RED ___ ___     AZU AZU BLU         CHU CHU CHU
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ RED                     ___ ___ ___
         >;
         layer-id = <LAYER_Function>;
       };
@@ -524,7 +545,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ GDN PNK SPG AZU ___                                     CYN ___ ___ ___ ___ CYN
           ___ ___ ___ ___ ___ ___                                     ___ CYN ___ ___ CYN ___
-                  ___ ___ RED         ___ ___ YLW     ___ ___ ___         ___ CYN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Emoji>;
       };
@@ -537,7 +559,8 @@
           PUR AZU AZU AZU AZU GDN                                     CHU COR COR COR COR ___
           GDN GDN SPG BLU GDN GDN                                     CHU COR COR COR COR ___
           PUR SPG SPG SPG SPG GDN                                     CHU PNK PNK PNK PUR YLW
-                  PNK PNK BLU         PUR GDN GDN     RED ___ ___         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ RED ___
         >;
         layer-id = <LAYER_Symbol>;
       };
@@ -550,7 +573,8 @@
           ___ ___ SPG AZU SPG ___                                     GDN GDN GDN GDN GDN ___
           ___ SPG AZU AZU AZU SPG                                     SPG FST SLO FIN WRP SPG
           WRP SPG BLU BLU BLU SPG                                     SPG AZU AZU AZU AZU SPG
-                  FIN SLO FST         GDN GDN GDN     RED ___ BLU         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse>;
       };
@@ -563,7 +587,8 @@
           ___ ___ SPG FST SPG ___                                     GDN GDN GDN GDN GDN ___
           ___ SPG FST FST FST SPG                                     SPG FST SLO FIN WRP GDN
           ___ SPG BLU BLU BLU SPG                                     SPG FST FST FST FST GDN
-                  FST FST FST         GDN GDN GDN     RED ___ BLU         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_MouseFast>;
       };
@@ -576,7 +601,8 @@
           ___ ___ SPG WRP SPG ___                                     GDN GDN GDN GDN GDN ___
           ___ SPG WRP WRP WRP SPG                                     SPG FST SLO FIN WRP GDN
           ___ SPG BLU BLU BLU SPG                                     SPG WRP WRP WRP WRP GDN
-                  WRP WRP WRP         GDN GDN GDN     RED ___ BLU         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_MouseWarp>;
       };
@@ -589,7 +615,8 @@
           ___ ___ SPG SLO SPG ___                                     GDN GDN GDN GDN GDN ___
           ___ SPG SLO SLO SLO SPG                                     SPG FST SLO FIN WRP GDN
           ___ SPG BLU BLU BLU SPG                                     SPG SLO SLO SLO SLO GDN
-                  SLO SLO SLO         GDN GDN GDN     RED ___ BLU         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_MouseSlow>;
       };
@@ -602,7 +629,8 @@
           ___ ___ SPG FIN SPG ___                                     GDN GDN GDN GDN GDN ___
           ___ SPG FIN FIN FIN SPG                                     SPG FST SLO FIN WRP GDN
           ___ SPG BLU BLU BLU SPG                                     SPG YLW GRN CYN MAJ GDN
-                  FIN FIN FIN         GDN GDN GDN     RED ___ BLU         FIN FIN FIN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_MouseFine>;
       };
@@ -615,7 +643,8 @@
           ___ PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK ___
           ___ PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK ___
           ___ ___ BLU BLU BLU COR                                     COR SSL SNL SCL PUR PUR
-                  ___ ___ ORN         SCL SNL SSL     BLU BLU RED         YLW GRN CYN
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     RED ___ ___
         >;
         layer-id = <LAYER_System>;
       };
@@ -628,7 +657,8 @@
           ___ SPG AZU AZU AZU ___                                     ___ ___ CYN CYN ___ ___
           AZU AZU AZU AZU AZU ___                                     ___ YLW GRN GRN YLW ___
           AZU AZU SPG SPG AZU ___                                     ___ ___ ___ ___ ___ ___
-                  SPG SPG SPG         ___ ___ ___     ___ ___ ___         RED ___ ___
+                  ___ ___ ___                                             RED ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_World>;
       };
@@ -641,7 +671,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     RED ___ ___ ___ ___ ___
-                  ___ ___ ___         ___ ___ ___     ___ ___ ___         RED ___ ___
+                  ___ ___ ___                                             RED ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Typing>;
       };
@@ -654,7 +685,8 @@
           ___ GDN GDN GDN GDN GDN                                     ___ ___ ___ ___ ___ TEA
           ___ COR ___ AZU ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ YLW AZU AZU AZU RED                                     ___ ___ ___ ___ ___ ___
-                  ___ ___ RED         YLW COR GRN     AZU AZU COR         ___ ___ ___
+                  ___ ___ RED                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Gaming>;
       };
@@ -667,7 +699,8 @@
           ___ GOL GOL GOL GOL GOL                                     GOL GOL GOL GOL GOL ___
           ___ MAJ CYN GRN YLW SPG                                     SPG YLW GRN CYN MAJ ___
           ___ SPG SPG SPG SPG SPG                                     SPG PNK PNK SPG PNK ___
-                  ___ ___ RED         RED RED RED     RED RED RED         RED ___ ___
+                  ___ ___ RED                                             RED ___ ___
+                              RED RED RED                     RED RED RED
         >;
         layer-id = <LAYER_Lower>;
       };
@@ -680,7 +713,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-                  ___ ___ ___         ___ ___ ___     ___ ___ ___         ___ ___ ___
+                  ___ ___ ___                                             ___ ___ ___
+                              ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Factory>;
       };
