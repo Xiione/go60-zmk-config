@@ -2,6 +2,10 @@ name: Build
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  ZMK_REPOSITORY: moergo-sc/zmk
+  ZMK_REF: refs/pull/36/head
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,8 +15,8 @@ jobs:
           submodules: recursive
       - uses: actions/checkout@v4
         with:
-          repository: moergo-sc/zmk
-          ref: main
+          repository: ${{ env.ZMK_REPOSITORY }}
+          ref: ${{ env.ZMK_REF }}
           path: src
       - uses: cachix/install-nix-action@v25
         with:

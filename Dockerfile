@@ -7,9 +7,9 @@ RUN <<EOF
     nix-env -iA cachix -f https://cachix.org/api/v1/install
     cachix use moergo-glove80-zmk-dev
     mkdir /config
-    # Mirror ZMK repository to make it easier to reference both branches and
-    # tags without remote namespacing
-    git clone --mirror https://github.com/darknao/zmk /zmk
+    # Mirror ZMK repository to make it easier to reference branches, tags, and
+    # pull request refs without remote namespacing.
+    git clone --mirror https://github.com/moergo-sc/zmk /zmk
     GIT_DIR=/zmk git worktree add --detach /src
 EOF
 
@@ -25,14 +25,15 @@ EOF
 
 COPY --chmod=755 <<EOF /bin/entrypoint.sh
 #!/usr/bin/env bash
-    BRANCH=rgb-layer-24.12
     set -euo pipefail
-    : "\${BRANCH:=main}"
+    : "\${ZMK_REPOSITORY:=moergo-sc/zmk}"
+    : "\${ZMK_REF:=refs/pull/36/head}"
 
-    echo "Checking out \$BRANCH from moergo-sc/zmk" >&2
+    echo "Checking out \$ZMK_REF from \$ZMK_REPOSITORY" >&2
     cd /src
-    git fetch origin
-    git checkout -q --detach "\$BRANCH"
+    git remote set-url origin "https://github.com/\$ZMK_REPOSITORY"
+    git fetch origin "\$ZMK_REF"
+    git checkout -q --detach FETCH_HEAD
 
     echo 'Building Go60 firmware' >&2
     cd /config
