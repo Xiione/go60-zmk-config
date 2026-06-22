@@ -399,8 +399,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC                                             ___ ___ ___
-                              LAC LAC LAC                     ___ ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftPinky>;
       };
@@ -413,8 +413,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC                                             ___ ___ ___
-                              LAC LAC LAC                     ___ ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftRingy>;
       };
@@ -427,8 +427,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC                                             ___ ___ ___
-                              LAC LAC LAC                     ___ ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftMiddy>;
       };
@@ -441,8 +441,8 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ LAC                                             ___ ___ ___
-                              LAC LAC LAC                     ___ ___ ___
+                  ___ ___ ___                                             LAC ___ ___
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftIndex>;
       };
@@ -456,7 +456,7 @@
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
-                              ___ ___ ___                     LAC LAC LAC
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightIndex>;
       };
@@ -470,7 +470,7 @@
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
-                              ___ ___ ___                     LAC LAC LAC
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightMiddy>;
       };
@@ -484,7 +484,7 @@
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
-                              ___ ___ ___                     LAC LAC LAC
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightRingy>;
       };
@@ -498,7 +498,7 @@
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
-                              ___ ___ ___                     LAC LAC LAC
+                              LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightPinky>;
       };
@@ -10532,7 +10532,7 @@ macros {
  &left_pinky_tap KEY_LH_C6R3  &left_pinky_tap KEY_LH_C5R3  &left_pinky_tap KEY_LH_C4R3  &left_pinky_tap KEY_LH_C3R3  &left_pinky_tap KEY_LH_C2R3  &left_pinky_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_pinky_tap KEY_LH_C6R4                        &none              &LeftPinkyRingy              &LeftPinkyMiddy              &LeftPinkyIndex  &left_pinky_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_pinky_tap KEY_LH_C5R5  &left_pinky_tap KEY_LH_C4R5  &left_pinky_tap KEY_LH_C3R5  &left_pinky_tap KEY_LH_C2R5  &left_pinky_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
-                                                           &left_pinky_tap KEY_LH_C4R6  &left_pinky_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
+                                                           &left_pinky_tap KEY_LH_C4R6  &left_pinky_tap KEY_LH_C3R6     &left_pinky_tap DEL                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
 #else
 HOME_ROW_INDICATOR_PASSTHRU
@@ -10547,7 +10547,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &left_ringy_tap KEY_LH_C6R3  &left_ringy_tap KEY_LH_C5R3  &left_ringy_tap KEY_LH_C4R3  &left_ringy_tap KEY_LH_C3R3  &left_ringy_tap KEY_LH_C2R3  &left_ringy_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_ringy_tap KEY_LH_C6R4              &LeftRingyPinky                        &none              &LeftRingyMiddy              &LeftRingyIndex  &left_ringy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_ringy_tap KEY_LH_C5R5  &left_ringy_tap KEY_LH_C4R5  &left_ringy_tap KEY_LH_C3R5  &left_ringy_tap KEY_LH_C2R5  &left_ringy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
-                                                           &left_ringy_tap KEY_LH_C4R6  &left_ringy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
+                                                           &left_ringy_tap KEY_LH_C4R6  &left_ringy_tap KEY_LH_C3R6     &left_ringy_tap DEL                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
 #else
 HOME_ROW_INDICATOR_PASSTHRU
@@ -10562,7 +10562,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &left_middy_tap KEY_LH_C6R3  &left_middy_tap KEY_LH_C5R3  &left_middy_tap KEY_LH_C4R3  &left_middy_tap KEY_LH_C3R3  &left_middy_tap KEY_LH_C2R3  &left_middy_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_middy_tap KEY_LH_C6R4              &LeftMiddyPinky              &LeftMiddyRingy                        &none              &LeftMiddyIndex  &left_middy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_middy_tap KEY_LH_C5R5  &left_middy_tap KEY_LH_C4R5  &left_middy_tap KEY_LH_C3R5  &left_middy_tap KEY_LH_C2R5  &left_middy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
-                                                           &left_middy_tap KEY_LH_C4R6  &left_middy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
+                                                           &left_middy_tap KEY_LH_C4R6  &left_middy_tap KEY_LH_C3R6     &left_middy_tap DEL                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T4  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
 #else
 HOME_ROW_INDICATOR_PASSTHRU
@@ -10577,7 +10577,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &left_index_tap KEY_LH_C6R3  &left_index_tap KEY_LH_C5R3  &left_index_tap KEY_LH_C4R3  &left_index_tap KEY_LH_C3R3  &left_index_tap KEY_LH_C2R3  &left_index_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_index_tap KEY_LH_C6R4              &LeftIndexPinky              &LeftIndexRingy              &LeftIndexMiddy                        &none  &left_index_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_index_tap KEY_LH_C5R5  &left_index_tap KEY_LH_C4R5  &left_index_tap KEY_LH_C3R5  &left_index_tap KEY_LH_C2R5  &left_index_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
-                                                           &left_index_tap KEY_LH_C4R6  &left_index_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
+                                                           &left_index_tap KEY_LH_C4R6  &left_index_tap KEY_LH_C3R6     &left_index_tap DEL                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
 #else
 HOME_ROW_INDICATOR_PASSTHRU
