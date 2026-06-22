@@ -793,42 +793,42 @@
 
 /* Input Listeners */
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 250>;
+    input-processors = <&zip_xy_scaler 3 1>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
-        input-processors = <&zip_xy_scaler 3 2>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 3 2>;
     };
     layer_Mouse_fast {
         layers = <LAYER_Mouse_fast>;
-        input-processors = <&zip_xy_scaler 3 1>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 3 1>;
     };
     layer_Mouse_warp {
         layers = <LAYER_Mouse_warp>;
-        input-processors = <&zip_xy_scaler 13 3>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 13 3>;
     };
     layer_Mouse_to_scroll {
         layers = <LAYER_Mouse_to_scroll>;
-        input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>;
     };
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+    input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
-        input-processors = <&zip_xy_scaler 2 13>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 2 13>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
     layer_Mouse_fast {
         layers = <LAYER_Mouse_fast>;
-        input-processors = <&zip_xy_scaler 2 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 2 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
     layer_Mouse_warp {
         layers = <LAYER_Mouse_warp>;
-        input-processors = <&zip_xy_scaler 4 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 4 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
     layer_Mouse_to_scroll {
         layers = <LAYER_Mouse_to_scroll>;
-        input-processors = <&zip_xy_scaler 3 1>, <&zip_click_to_right_click_mapper>, <&zip_temp_layer LAYER_Mouse 250>;
+        input-processors = <&zip_xy_scaler 3 1>, <&zip_click_to_right_click_mapper>;
     };
 };
 
