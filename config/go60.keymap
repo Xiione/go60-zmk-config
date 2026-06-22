@@ -147,6 +147,14 @@
   POS_LH_T1 POS_LH_T2 POS_LH_T3 \
   POS_RH_T1 POS_RH_T2 POS_RH_T3
 
+#define HOME_ROW_INDICATOR_PASSTHRU \
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans \
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans \
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans \
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans \
+                 &trans &trans &trans               &trans &trans &trans \
+                              &trans &trans &trans  &trans &trans &trans
+
 /* Environment and metadata defines */
 #define KB_TYPE_GLOVE_80 1
 #define KB_TYPE_GO_60    2
@@ -967,7 +975,7 @@
 #define OPERATING_SYSTEM 'M' // choose 'L'inux, 'M'acOS, or 'W'indows
 #define DIFFICULTY_LEVEL  3  // 0:custom, 1:easy -> 5:hard (see below)
 #define ENABLE_MOUSE_KEYS    // requires HID_POINTING override to "y"
-#define ENFORCE_BILATERAL    // cancels single-handed home row mod+tap
+//#define ENFORCE_BILATERAL   // cancels single-handed home row mod+tap
 //#define SPACE_FORGIVENESS  // allow lingering taps on the space bar
 //#define THUMB_FORGIVENESS  // allow lingering taps on the thumb keys
 //#define SHIFT_FORGIVENESS  // requires v24.08-beta or newer firmware
@@ -2293,11 +2301,7 @@ behaviors {
   #define LeftPinky(key, layer_index) LeftPinky_unroll(layer_index) (key)
   #define LeftPinky_unroll(layer_index) LeftPinky_concat(LeftPinky_layer, layer_index)
   #define LeftPinky_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define left_pinky_layer0_variant left_pinky_bilateral
-  #else
-    #define left_pinky_layer0_variant left_pinky
-  #endif
+  #define left_pinky_layer0_variant left_pinky_bilateral
   #define LeftPinky_layer0(key) left_pinky_layer0_variant LEFT_PINKY_MOD key
   #define LeftPinky_layer1(key) left_pinky LEFT_PINKY_MOD key
   #define LeftPinky_layer2(key) left_pinky LEFT_PINKY_MOD key
@@ -2387,11 +2391,7 @@ behaviors {
   #define RightPinky(key, layer_index) RightPinky_unroll(layer_index) (key)
   #define RightPinky_unroll(layer_index) RightPinky_concat(RightPinky_layer, layer_index)
   #define RightPinky_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define right_pinky_layer0_variant right_pinky_bilateral
-  #else
-    #define right_pinky_layer0_variant right_pinky
-  #endif
+  #define right_pinky_layer0_variant right_pinky_bilateral
   #define RightPinky_layer0(key) right_pinky_layer0_variant RIGHT_PINKY_MOD key
   #define RightPinky_layer1(key) right_pinky RIGHT_PINKY_MOD key
   #define RightPinky_layer2(key) right_pinky RIGHT_PINKY_MOD key
@@ -2481,11 +2481,7 @@ behaviors {
   #define LeftRingy(key, layer_index) LeftRingy_unroll(layer_index) (key)
   #define LeftRingy_unroll(layer_index) LeftRingy_concat(LeftRingy_layer, layer_index)
   #define LeftRingy_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define left_ringy_layer0_variant left_ringy_bilateral
-  #else
-    #define left_ringy_layer0_variant left_ringy
-  #endif
+  #define left_ringy_layer0_variant left_ringy_bilateral
   #define LeftRingy_layer0(key) left_ringy_layer0_variant LEFT_RINGY_MOD key
   #define LeftRingy_layer1(key) left_ringy LEFT_RINGY_MOD key
   #define LeftRingy_layer2(key) left_ringy LEFT_RINGY_MOD key
@@ -2575,11 +2571,7 @@ behaviors {
   #define RightRingy(key, layer_index) RightRingy_unroll(layer_index) (key)
   #define RightRingy_unroll(layer_index) RightRingy_concat(RightRingy_layer, layer_index)
   #define RightRingy_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define right_ringy_layer0_variant right_ringy_bilateral
-  #else
-    #define right_ringy_layer0_variant right_ringy
-  #endif
+  #define right_ringy_layer0_variant right_ringy_bilateral
   #define RightRingy_layer0(key) right_ringy_layer0_variant RIGHT_RINGY_MOD key
   #define RightRingy_layer1(key) right_ringy RIGHT_RINGY_MOD key
   #define RightRingy_layer2(key) right_ringy RIGHT_RINGY_MOD key
@@ -2669,11 +2661,7 @@ behaviors {
   #define LeftMiddy(key, layer_index) LeftMiddy_unroll(layer_index) (key)
   #define LeftMiddy_unroll(layer_index) LeftMiddy_concat(LeftMiddy_layer, layer_index)
   #define LeftMiddy_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define left_middy_layer0_variant left_middy_bilateral
-  #else
-    #define left_middy_layer0_variant left_middy
-  #endif
+  #define left_middy_layer0_variant left_middy_bilateral
   #define LeftMiddy_layer0(key) left_middy_layer0_variant LEFT_MIDDY_MOD key
   #define LeftMiddy_layer1(key) left_middy LEFT_MIDDY_MOD key
   #define LeftMiddy_layer2(key) left_middy LEFT_MIDDY_MOD key
@@ -2763,11 +2751,7 @@ behaviors {
   #define RightMiddy(key, layer_index) RightMiddy_unroll(layer_index) (key)
   #define RightMiddy_unroll(layer_index) RightMiddy_concat(RightMiddy_layer, layer_index)
   #define RightMiddy_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define right_middy_layer0_variant right_middy_bilateral
-  #else
-    #define right_middy_layer0_variant right_middy
-  #endif
+  #define right_middy_layer0_variant right_middy_bilateral
   #define RightMiddy_layer0(key) right_middy_layer0_variant RIGHT_MIDDY_MOD key
   #define RightMiddy_layer1(key) right_middy RIGHT_MIDDY_MOD key
   #define RightMiddy_layer2(key) right_middy RIGHT_MIDDY_MOD key
@@ -2857,11 +2841,7 @@ behaviors {
   #define LeftIndex(key, layer_index) LeftIndex_unroll(layer_index) (key)
   #define LeftIndex_unroll(layer_index) LeftIndex_concat(LeftIndex_layer, layer_index)
   #define LeftIndex_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define left_index_layer0_variant left_index_bilateral
-  #else
-    #define left_index_layer0_variant left_index
-  #endif
+  #define left_index_layer0_variant left_index_bilateral
   #define LeftIndex_layer0(key) left_index_layer0_variant LEFT_INDEX_MOD key
   #define LeftIndex_layer1(key) left_index LEFT_INDEX_MOD key
   #define LeftIndex_layer2(key) left_index LEFT_INDEX_MOD key
@@ -2951,11 +2931,7 @@ behaviors {
   #define RightIndex(key, layer_index) RightIndex_unroll(layer_index) (key)
   #define RightIndex_unroll(layer_index) RightIndex_concat(RightIndex_layer, layer_index)
   #define RightIndex_concat(prefix, layer_index) prefix ## layer_index
-  #ifdef ENFORCE_BILATERAL
-    #define right_index_layer0_variant right_index_bilateral
-  #else
-    #define right_index_layer0_variant right_index
-  #endif
+  #define right_index_layer0_variant right_index_bilateral
   #define RightIndex_layer0(key) right_index_layer0_variant RIGHT_INDEX_MOD key
   #define RightIndex_layer1(key) right_index RIGHT_INDEX_MOD key
   #define RightIndex_layer2(key) right_index RIGHT_INDEX_MOD key
@@ -10551,89 +10527,121 @@ macros {
 
         layer_LeftPinky {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &left_pinky_tap KEY_LH_C6R2  &left_pinky_tap KEY_LH_C5R2  &left_pinky_tap KEY_LH_C4R2  &left_pinky_tap KEY_LH_C3R2  &left_pinky_tap KEY_LH_C2R2  &left_pinky_tap KEY_LH_C1R2                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_pinky_tap KEY_LH_C6R3  &left_pinky_tap KEY_LH_C5R3  &left_pinky_tap KEY_LH_C4R3  &left_pinky_tap KEY_LH_C3R3  &left_pinky_tap KEY_LH_C2R3  &left_pinky_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_pinky_tap KEY_LH_C6R4                        &none              &LeftPinkyRingy              &LeftPinkyMiddy              &LeftPinkyIndex  &left_pinky_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_pinky_tap KEY_LH_C5R5  &left_pinky_tap KEY_LH_C4R5  &left_pinky_tap KEY_LH_C3R5  &left_pinky_tap KEY_LH_C2R5  &left_pinky_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_pinky_tap KEY_LH_C4R6  &left_pinky_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_LeftRingy {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &left_ringy_tap KEY_LH_C6R2  &left_ringy_tap KEY_LH_C5R2  &left_ringy_tap KEY_LH_C4R2  &left_ringy_tap KEY_LH_C3R2  &left_ringy_tap KEY_LH_C2R2  &left_ringy_tap KEY_LH_C1R2                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_ringy_tap KEY_LH_C6R3  &left_ringy_tap KEY_LH_C5R3  &left_ringy_tap KEY_LH_C4R3  &left_ringy_tap KEY_LH_C3R3  &left_ringy_tap KEY_LH_C2R3  &left_ringy_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_ringy_tap KEY_LH_C6R4              &LeftRingyPinky                        &none              &LeftRingyMiddy              &LeftRingyIndex  &left_ringy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_ringy_tap KEY_LH_C5R5  &left_ringy_tap KEY_LH_C4R5  &left_ringy_tap KEY_LH_C3R5  &left_ringy_tap KEY_LH_C2R5  &left_ringy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_ringy_tap KEY_LH_C4R6  &left_ringy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_LeftMiddy {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &left_middy_tap KEY_LH_C6R2  &left_middy_tap KEY_LH_C5R2  &left_middy_tap KEY_LH_C4R2  &left_middy_tap KEY_LH_C3R2  &left_middy_tap KEY_LH_C2R2  &left_middy_tap KEY_LH_C1R2                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_middy_tap KEY_LH_C6R3  &left_middy_tap KEY_LH_C5R3  &left_middy_tap KEY_LH_C4R3  &left_middy_tap KEY_LH_C3R3  &left_middy_tap KEY_LH_C2R3  &left_middy_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_middy_tap KEY_LH_C6R4              &LeftMiddyPinky              &LeftMiddyRingy                        &none              &LeftMiddyIndex  &left_middy_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_middy_tap KEY_LH_C5R5  &left_middy_tap KEY_LH_C4R5  &left_middy_tap KEY_LH_C3R5  &left_middy_tap KEY_LH_C2R5  &left_middy_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_middy_tap KEY_LH_C4R6  &left_middy_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T4  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_LeftIndex {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &left_index_tap KEY_LH_C6R2  &left_index_tap KEY_LH_C5R2  &left_index_tap KEY_LH_C4R2  &left_index_tap KEY_LH_C3R2  &left_index_tap KEY_LH_C2R2  &left_index_tap KEY_LH_C1R2                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_index_tap KEY_LH_C6R3  &left_index_tap KEY_LH_C5R3  &left_index_tap KEY_LH_C4R3  &left_index_tap KEY_LH_C3R3  &left_index_tap KEY_LH_C2R3  &left_index_tap KEY_LH_C1R3                                                                       &trans               &trans               &trans               &trans               &trans  &trans
  &left_index_tap KEY_LH_C6R4              &LeftIndexPinky              &LeftIndexRingy              &LeftIndexMiddy                        &none  &left_index_tap KEY_LH_C1R4                                                                       &trans  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RINGY_KEY  &kp RIGHT_PINKY_KEY  &trans
                       &trans  &left_index_tap KEY_LH_C5R5  &left_index_tap KEY_LH_C4R5  &left_index_tap KEY_LH_C3R5  &left_index_tap KEY_LH_C2R5  &left_index_tap KEY_LH_C1R5                                                                       &trans               &trans               &trans               &trans               &trans  &trans
                                                            &left_index_tap KEY_LH_C4R6  &left_index_tap KEY_LH_C3R6              &mo LAY_LH_C2R6                                                                                                                         &trans               &trans               &trans
                                                                                                                                                                                &mo LAY_LH_T5  &mo LAY_LH_T4  &mo LAY_LH_T1  &trans  &trans  &trans
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_RightIndex {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_index_tap KEY_RH_C1R2  &right_index_tap KEY_RH_C2R2  &right_index_tap KEY_RH_C3R2  &right_index_tap KEY_RH_C4R2  &right_index_tap KEY_RH_C5R2  &right_index_tap KEY_RH_C6R2
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_index_tap KEY_RH_C1R3  &right_index_tap KEY_RH_C2R3  &right_index_tap KEY_RH_C3R3  &right_index_tap KEY_RH_C4R3  &right_index_tap KEY_RH_C5R3  &right_index_tap KEY_RH_C6R3
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_index_tap KEY_RH_C1R4                         &none              &RightIndexMiddy              &RightIndexRingy              &RightIndexPinky  &right_index_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_index_tap KEY_RH_C1R5  &right_index_tap KEY_RH_C2R5  &right_index_tap KEY_RH_C3R5  &right_index_tap KEY_RH_C4R5  &right_index_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_index_tap KEY_RH_C3R6  &right_index_tap KEY_RH_C4R6
                                                                                                  &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_RightMiddy {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_middy_tap KEY_RH_C1R2  &right_middy_tap KEY_RH_C2R2  &right_middy_tap KEY_RH_C3R2  &right_middy_tap KEY_RH_C4R2  &right_middy_tap KEY_RH_C5R2  &right_middy_tap KEY_RH_C6R2
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_middy_tap KEY_RH_C1R3  &right_middy_tap KEY_RH_C2R3  &right_middy_tap KEY_RH_C3R3  &right_middy_tap KEY_RH_C4R3  &right_middy_tap KEY_RH_C5R3  &right_middy_tap KEY_RH_C6R3
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_middy_tap KEY_RH_C1R4              &RightMiddyIndex                         &none              &RightMiddyRingy              &RightMiddyPinky  &right_middy_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_middy_tap KEY_RH_C1R5  &right_middy_tap KEY_RH_C2R5  &right_middy_tap KEY_RH_C3R5  &right_middy_tap KEY_RH_C4R5  &right_middy_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_middy_tap KEY_RH_C3R6  &right_middy_tap KEY_RH_C4R6
                                                                                                  &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_RightRingy {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_ringy_tap KEY_RH_C1R2  &right_ringy_tap KEY_RH_C2R2  &right_ringy_tap KEY_RH_C3R2  &right_ringy_tap KEY_RH_C4R2  &right_ringy_tap KEY_RH_C5R2  &right_ringy_tap KEY_RH_C6R2
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_ringy_tap KEY_RH_C1R3  &right_ringy_tap KEY_RH_C2R3  &right_ringy_tap KEY_RH_C3R3  &right_ringy_tap KEY_RH_C4R3  &right_ringy_tap KEY_RH_C5R3  &right_ringy_tap KEY_RH_C6R3
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_ringy_tap KEY_RH_C1R4              &RightRingyIndex              &RightRingyMiddy                         &none              &RightRingyPinky  &right_ringy_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_ringy_tap KEY_RH_C1R5  &right_ringy_tap KEY_RH_C2R5  &right_ringy_tap KEY_RH_C3R5  &right_ringy_tap KEY_RH_C4R5  &right_ringy_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_ringy_tap KEY_RH_C3R6  &right_ringy_tap KEY_RH_C4R6
                                                                                                  &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
         layer_RightPinky {
             bindings = <
+#ifdef ENFORCE_BILATERAL
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_pinky_tap KEY_RH_C1R2  &right_pinky_tap KEY_RH_C2R2  &right_pinky_tap KEY_RH_C3R2  &right_pinky_tap KEY_RH_C4R2  &right_pinky_tap KEY_RH_C5R2  &right_pinky_tap KEY_RH_C6R2
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_pinky_tap KEY_RH_C1R3  &right_pinky_tap KEY_RH_C2R3  &right_pinky_tap KEY_RH_C3R3  &right_pinky_tap KEY_RH_C4R3  &right_pinky_tap KEY_RH_C5R3  &right_pinky_tap KEY_RH_C6R3
  &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RINGY_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &trans                                                                       &right_pinky_tap KEY_RH_C1R4              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRingy                         &none  &right_pinky_tap KEY_RH_C6R4
  &trans              &trans              &trans              &trans              &trans  &trans                                                                       &right_pinky_tap KEY_RH_C1R5  &right_pinky_tap KEY_RH_C2R5  &right_pinky_tap KEY_RH_C3R5  &right_pinky_tap KEY_RH_C4R5  &right_pinky_tap KEY_RH_C5R5                        &trans
                                          &trans              &trans              &trans                                                                                                                          &mo LAY_RH_C2R6  &right_pinky_tap KEY_RH_C3R6  &right_pinky_tap KEY_RH_C4R6
                                                                                                  &trans  &trans  &trans  &mo LAY_RH_T1  &mo LAY_RH_T4  &mo LAY_RH_T5
+#else
+HOME_ROW_INDICATOR_PASSTHRU
+#endif
             >;
         };
 
