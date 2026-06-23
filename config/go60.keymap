@@ -588,7 +588,7 @@
       };
       #endif
 
-      #ifdef LAYER_MouseFast
+      #ifdef LAYER_Mouse_fast
       MouseFast {
         bindings = <
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
@@ -598,11 +598,11 @@
                   ___ ___ ___                                             ___ ___ ___
                               ___ ___ ___                     ___ ___ ___
         >;
-        layer-id = <LAYER_MouseFast>;
+        layer-id = <LAYER_Mouse_fast>;
       };
       #endif
 
-      #ifdef LAYER_MouseWarp
+      #ifdef LAYER_Mouse_warp
       MouseWarp {
         bindings = <
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
@@ -612,11 +612,11 @@
                   ___ ___ ___                                             ___ ___ ___
                               ___ ___ ___                     ___ ___ ___
         >;
-        layer-id = <LAYER_MouseWarp>;
+        layer-id = <LAYER_Mouse_warp>;
       };
       #endif
 
-      #ifdef LAYER_MouseSlow
+      #ifdef LAYER_Mouse_slow
       MouseSlow {
         bindings = <
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
@@ -626,7 +626,7 @@
                   ___ ___ ___                                             ___ ___ ___
                               ___ ___ ___                     ___ ___ ___
         >;
-        layer-id = <LAYER_MouseSlow>;
+        layer-id = <LAYER_Mouse_slow>;
       };
       #endif
 
@@ -813,10 +813,10 @@
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_scaler 1 3>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
+    input-processors = <&zip_xy_scaler 1 10>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
-        input-processors = <&zip_xy_scaler 2 13>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
+        input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     };
     layer_Mouse_fast {
         layers = <LAYER_Mouse_fast>;
@@ -10286,7 +10286,7 @@ macros {
 // before the mouse pointer speed is suddenly boosted to the maximum value.
 //
 #ifndef MOUSE_SCROLL_TIME_TO_MAXIMUM_SPEED
-#define MOUSE_SCROLL_TIME_TO_MAXIMUM_SPEED 300
+#define MOUSE_SCROLL_TIME_TO_MAXIMUM_SPEED 0
 #endif
 
 //
