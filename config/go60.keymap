@@ -647,12 +647,12 @@
       #ifdef LAYER_System
       System {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK ___
-          ___ PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK ___
-          ___ ___ BLU BLU BLU COR                                     COR SSL SNL SCL PUR PUR
-                  ___ ___ ___                                             ___ ___ ___
-                              ___ ___ ___                     RED ___ ___
+          PUR ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
+          PUR PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK PUR
+          PUR PNK AZU SPG GDN COR                                     COR GDN SPG AZU PNK PUR
+          ___ ___ BLU BLU BLU COR                                     COR SSL SNL SCL MAJ PUR
+                  ___ ___ ORN                                             YLW GRN CYN
+                              SSL SNL SCL                     RED BLU BLU
         >;
         layer-id = <LAYER_System>;
       };
