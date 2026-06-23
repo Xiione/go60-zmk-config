@@ -10801,45 +10801,45 @@ HOME_ROW_INDICATOR_PASSTHRU
 
         layer_Mouse_slow {
             bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                 &trans  &trans  &trans  &trans  &trans  &trans
+                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
+                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
+ &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
+                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
+                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
+                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
         layer_Mouse_fast {
             bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                 &trans  &trans  &trans  &trans  &trans  &trans
+                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
+                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
+ &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
+                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
+                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
+                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
         layer_Mouse_warp {
             bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                 &trans  &trans  &trans  &trans  &trans  &trans
+                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
+                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
+ &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
+                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
+                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
+                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
         layer_Mouse_to_scroll {
             bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans                                                                  &trans  &trans  &trans
-                                                 &trans  &trans  &trans  &trans  &trans  &trans
+                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
+                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
+ &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
+                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
+                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
+                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
