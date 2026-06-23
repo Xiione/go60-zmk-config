@@ -630,8 +630,8 @@
       };
       #endif
 
-      #ifdef LAYER_MouseFine
-      MouseFine {
+      #ifdef LAYER_Mouse_to_scroll
+      Mouse_to_scroll {
         bindings = <
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
           ___ ___ SPG FIN SPG ___                                     GDN GDN GDN GDN GDN ___
@@ -640,7 +640,7 @@
                   ___ ___ ___                                             ___ ___ ___
                               ___ ___ ___                     ___ ___ ___
         >;
-        layer-id = <LAYER_MouseFine>;
+        layer-id = <LAYER_Mouse_to_scroll>;
       };
       #endif
 
