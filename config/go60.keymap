@@ -693,8 +693,8 @@
           ___ GDN GDN GDN GDN GDN                                     ___ ___ ___ ___ ___ TEA
           ___ COR ___ AZU ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ YLW AZU AZU AZU RED                                     ___ ___ ___ ___ ___ ___
-                  ___ ___ RED                                             ___ ___ ___
-                              ___ ___ ___                     ___ ___ ___
+                  YLW AZU AZU                                             ORN AZU COR
+                              COR GRN COR                     AZU AZU AZU
         >;
         layer-id = <LAYER_Gaming>;
       };
