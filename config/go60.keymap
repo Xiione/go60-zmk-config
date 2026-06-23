@@ -565,7 +565,7 @@
         bindings = <
           BLU PNK AZU AZU CHU CHU                                     ___ ___ ___ ___ ___ ___
           PUR AZU AZU AZU AZU GDN                                     CHU COR COR COR COR PUR
-          GDN GDN SPG BLU GDN GDN                                     CHU COR COR COR COR ___
+          GDN GDN SPG BLU GDN GDN                                     CHU COR COR COR COR PNK
           PUR SPG SPG SPG SPG GDN                                     CHU PNK PNK PNK MAJ COR
                   PNK PNK BLU                                             YLW GRN CYN
                               PUR GDN GDN                     ___ RED ___
