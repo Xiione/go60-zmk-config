@@ -77,17 +77,33 @@ if [[ ${#volumes[@]} -eq 0 ]]; then
   exit 1
 fi
 
+failures=0
+
 for volume in "${volumes[@]}"; do
   printf 'Flashing %s...\n' "$(basename "$volume")"
 
   # -X avoids writing extended attributes/resource forks to UF2 bootloaders.
-  cp -X "$firmware" "$volume/"
-  sync
+  if cp -X "$firmware" "$volume/"; then
+    if ! sync; then
+      printf 'warning: sync failed after flashing %s; continuing\n' "$(basename "$volume")" >&2
+      failures=$((failures + 1))
+    fi
+  else
+    if volume_still_mounted "$volume"; then
+      printf 'warning: failed to copy firmware to %s; continuing\n' "$(basename "$volume")" >&2
+      failures=$((failures + 1))
+    else
+      printf 'warning: copy to %s reported failure after the volume disappeared; treating as likely flashed\n' "$(basename "$volume")" >&2
+    fi
+  fi
 
   if eject_volume "$volume"; then
     printf 'Done: %s\n' "$(basename "$volume")"
   else
     printf 'warning: copied firmware, but could not eject %s cleanly\n' "$(basename "$volume")" >&2
     printf 'warning: macOS may still show a "disk not ejected properly" notification\n' >&2
+    failures=$((failures + 1))
   fi
 done
+
+exit "$failures"
