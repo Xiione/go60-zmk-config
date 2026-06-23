@@ -564,11 +564,11 @@
       Symbol {
         bindings = <
           COR PNK AZU AZU CHU CHU                                     ___ ___ ___ ___ ___ ___
-          PUR AZU AZU AZU AZU GDN                                     CHU COR COR COR COR ___
+          PUR AZU AZU AZU AZU GDN                                     CHU COR COR COR COR PUR
           GDN GDN SPG BLU GDN GDN                                     CHU COR COR COR COR ___
-          PUR SPG SPG SPG SPG GDN                                     CHU PNK PNK PNK PUR YLW
-                  ___ ___ ___                                             ___ ___ ___
-                              ___ ___ ___                     ___ RED ___
+          PUR SPG SPG SPG SPG GDN                                     CHU PNK PNK PNK MAJ COR
+                  PNK PNK BLU                                             YLW GRN CYN
+                              GDN GDN GDN                     ___ RED ___
         >;
         layer-id = <LAYER_Symbol>;
       };
