@@ -596,7 +596,7 @@
           FIN SPG FST FST FST SPG                                     SPG FST FST FST GDN FIN
           ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
                   BLU BLU BLU                                             YLW GRN CYN
-                              ___ ___ ___                     ___ ___ ___
+                              GDN GDN GDN                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse_fast>;
       };
@@ -610,7 +610,7 @@
           FIN SPG WRP WRP WRP SPG                                     SPG WRP WRP WRP GDN FIN
           ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
                   BLU BLU BLU                                             YLW GRN CYN
-                              ___ ___ ___                     ___ ___ ___
+                              GDN GDN GDN                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse_warp>;
       };
@@ -624,7 +624,7 @@
           FIN SPG SLO SLO SLO SPG                                     SPG SLO SLO SLO GDN FIN
           ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
                   BLU BLU BLU                                             YLW GRN CYN
-                              ___ ___ ___                     ___ ___ ___
+                              GDN GDN GDN                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse_slow>;
       };
@@ -638,7 +638,7 @@
           FIN SPG FIN FIN FIN SPG                                     SPG FIN FIN FIN GDN FIN
           ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
                   BLU BLU BLU                                             YLW GRN CYN
-                              ___ ___ ___                     ___ ___ ___
+                              GDN GDN GDN                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse_to_scroll>;
       };
