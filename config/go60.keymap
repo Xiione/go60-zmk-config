@@ -508,11 +508,11 @@
       Cursor {
         bindings = <
           PNK COR COR COR COR ___                                     ___ ___ ___ ___ ___ PNK
-          ___ COR COR COR COR GDN                                     GDN COR PUR PUR COR ___
+          PUR COR COR COR COR GDN                                     GDN PUR AZU AZU COR COR
           YLW MAJ CYN GRN YLW GDN                                     GDN AZU AZU AZU AZU YLW
-          PNK SPG SPG SPG PUR GDN                                     GDN AZU AZU AZU AZU PNK
-                  ___ ___ ___                                             ___ ___ ___
-                              ___ RED ___                     ___ ___ ___
+          PNK SPG SPG SPG PUR GDN                                     GDN PUR AZU AZU AZU PNK
+                  PUR PUR PUR                                             PUR PUR PUR
+                              ___ RED ___                     SPG SPG SPG
         >;
         layer-id = <LAYER_Cursor>;
       };
