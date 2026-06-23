@@ -538,9 +538,9 @@
           ___ COR COR COR COR ___                                     AZU AZU AZU AZU AZU AZU
           ___ COR COR COR COR GDN                                     GDN PNK PNK PNK PNK PNK
           YLW MAJ CYN GRN YLW GDN                                     GDN PNK PNK PNK PNK PNK
-          ___ SPG SPG SPG PUR GDN                                     GDN PNK PNK PNK PNK PNK
-                  ___ ___ ___                                             ___ ___ ___
-                              ___ ___ RED                     ___ ___ ___
+          PUR SPG SPG SPG PUR GDN                                     GDN PNK PNK PNK PNK PNK
+                  PUR PUR PUR                                             BLU CHU CHU
+                              ___ ___ RED                     AZU AZU BLU
         >;
         layer-id = <LAYER_Function>;
       };
