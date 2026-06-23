@@ -661,8 +661,8 @@
       #ifdef LAYER_World
       World {
         bindings = <
-          SPG ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ SPG AZU AZU AZU ___                                     ___ ___ CYN CYN ___ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          SPG SPG AZU AZU AZU ___                                     ___ ___ CYN CYN ___ ___
           AZU AZU AZU AZU AZU ___                                     ___ YLW GRN GRN YLW ___
           AZU AZU SPG SPG AZU ___                                     ___ ___ ___ ___ ___ ___
                   ___ ___ ___                                             RED ___ ___
