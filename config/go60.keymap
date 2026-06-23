@@ -521,12 +521,12 @@
       #ifdef LAYER_Number
       Number {
         bindings = <
-          ___ COR COR COR COR ___                                     TEA SPG SPG SPG SPG SPG
+          SPG COR COR COR COR SPG                                     TEA SPG SPG SPG SPG SPG
           GDN COR COR COR COR GOL                                     TEA GOL GOL GOL SPG SPG
           YLW MAJ CYN GRN YLW TEA                                     TEA GOL GOL GOL SPG SPG
-          TEA SPG SPG SPG PUR GDN                                     TEA GOL GOL GOL SPG SPG
-                  ___ ___ ___                                             ___ ___ ___
-                              RED ___ ___                     ___ ___ ___
+          PUR SPG SPG SPG PUR GDN                                     TEA GOL GOL GOL SPG SPG
+                  PUR PUR PUR                                             SPG SPG SPG
+                              RED TEA SPG                     SPG GOL SPG
         >;
         layer-id = <LAYER_Number>;
       };
