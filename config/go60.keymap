@@ -577,12 +577,12 @@
       #ifdef LAYER_Mouse
       Mouse {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ ___ SPG AZU SPG ___                                     GDN GDN GDN GDN GDN ___
-          ___ SPG AZU AZU AZU SPG                                     SPG FST SLO FIN WRP SPG
-          WRP SPG BLU BLU BLU SPG                                     SPG AZU AZU AZU AZU SPG
-                  ___ ___ ___                                             ___ ___ ___
-                              ___ ___ ___                     ___ ___ RED
+          GDN ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ GDN
+          GDN ___ SPG AZU SPG ___                                     SPG GDN AZU GDN SPG GDN
+          FIN SPG AZU AZU AZU SPG                                     SPG AZU AZU AZU GDN FIN
+          ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
+                  BLU BLU BLU                                             YLW GRN CYN
+                              GDN GDN GDN                     ___ ___ RED
         >;
         layer-id = <LAYER_Mouse>;
       };
@@ -591,11 +591,11 @@
       #ifdef LAYER_Mouse_fast
       MouseFast {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ ___ SPG FST SPG ___                                     GDN GDN GDN GDN GDN ___
-          ___ SPG FST FST FST SPG                                     SPG FST SLO FIN WRP GDN
-          ___ SPG BLU BLU BLU SPG                                     SPG FST FST FST FST GDN
-                  ___ ___ ___                                             ___ ___ ___
+          GDN ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ GDN
+          GDN ___ SPG FST SPG ___                                     SPG GDN FST GDN SPG GDN
+          FIN SPG FST FST FST SPG                                     SPG FST FST FST GDN FIN
+          ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
+                  BLU BLU BLU                                             YLW GRN CYN
                               ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Mouse_fast>;
@@ -605,11 +605,11 @@
       #ifdef LAYER_Mouse_warp
       MouseWarp {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ ___ SPG WRP SPG ___                                     GDN GDN GDN GDN GDN ___
-          ___ SPG WRP WRP WRP SPG                                     SPG FST SLO FIN WRP GDN
-          ___ SPG BLU BLU BLU SPG                                     SPG WRP WRP WRP WRP GDN
-                  ___ ___ ___                                             ___ ___ ___
+          GDN ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ GDN
+          GDN ___ SPG WRP SPG ___                                     SPG GDN WRP GDN SPG GDN
+          FIN SPG WRP WRP WRP SPG                                     SPG WRP WRP WRP GDN FIN
+          ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
+                  BLU BLU BLU                                             YLW GRN CYN
                               ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Mouse_warp>;
@@ -619,11 +619,11 @@
       #ifdef LAYER_Mouse_slow
       MouseSlow {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ ___ SPG SLO SPG ___                                     GDN GDN GDN GDN GDN ___
-          ___ SPG SLO SLO SLO SPG                                     SPG FST SLO FIN WRP GDN
-          ___ SPG BLU BLU BLU SPG                                     SPG SLO SLO SLO SLO GDN
-                  ___ ___ ___                                             ___ ___ ___
+          GDN ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ GDN
+          GDN ___ SPG SLO SPG ___                                     SPG GDN SLO GDN SPG GDN
+          FIN SPG SLO SLO SLO SPG                                     SPG SLO SLO SLO GDN FIN
+          ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
+                  BLU BLU BLU                                             YLW GRN CYN
                               ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Mouse_slow>;
@@ -633,11 +633,11 @@
       #ifdef LAYER_Mouse_to_scroll
       Mouse_to_scroll {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ PUR
-          ___ ___ SPG FIN SPG ___                                     GDN GDN GDN GDN GDN ___
-          ___ SPG FIN FIN FIN SPG                                     SPG FST SLO FIN WRP GDN
-          ___ SPG BLU BLU BLU SPG                                     SPG YLW GRN CYN MAJ GDN
-                  ___ ___ ___                                             ___ ___ ___
+          GDN ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ GDN
+          GDN ___ SPG FIN SPG ___                                     SPG GDN FIN GDN SPG GDN
+          FIN SPG FIN FIN FIN SPG                                     SPG FIN FIN FIN GDN FIN
+          ___ SPG SLO WRP FST SPG                                     SPG FST WRP SLO MAJ PUR
+                  BLU BLU BLU                                             YLW GRN CYN
                               ___ ___ ___                     ___ ___ ___
         >;
         layer-id = <LAYER_Mouse_to_scroll>;
