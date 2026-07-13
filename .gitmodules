@@ -1,0 +1,6 @@
+[submodule "modules/zmk-raw-hid"]
+	path = modules/zmk-raw-hid
+	url = https://github.com/ovandongen/zmk-raw-hid.git
+[submodule "modules/zmk-hid-viz"]
+	path = modules/zmk-hid-viz
+	url = https://github.com/ovandongen/zmk-hid-viz.git
