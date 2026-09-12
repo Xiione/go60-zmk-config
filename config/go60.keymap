@@ -196,6 +196,8 @@
 #define LAYER_Mouse_to_scroll 29
 #define LAYER_Magic 30
 
+#define SHOW_HRM_INDICATORS // show HRM-colored markers on both halves
+
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 #ifndef LAYER_Lower
 #define LAYER_Lower 0
@@ -318,6 +320,18 @@
   #define DUG &ug DUG_RGB
   #define LAC &ug LAC_RGB
 
+  #ifdef SHOW_HRM_INDICATORS
+    #define HRM_MARKER_PINKY MAJ
+    #define HRM_MARKER_RINGY CYN
+    #define HRM_MARKER_MIDDY GRN
+    #define HRM_MARKER_INDEX ___
+  #else
+    #define HRM_MARKER_PINKY ___
+    #define HRM_MARKER_RINGY ___
+    #define HRM_MARKER_MIDDY ___
+    #define HRM_MARKER_INDEX ___
+  #endif
+
   //
   // underglow for keyboard locks on the Base layer
   //
@@ -395,9 +409,9 @@
       #ifdef LAYER_LeftPinky
       LeftPinky {
         bindings = <
-          ___ MAJ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW HRM_MARKER_PINKY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -409,9 +423,9 @@
       #ifdef LAYER_LeftRingy
       LeftRingy {
         bindings = <
-          ___ ___ CYN ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW HRM_MARKER_RINGY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -423,9 +437,9 @@
       #ifdef LAYER_LeftMiddy
       LeftMiddy {
         bindings = <
-          ___ ___ ___ GRN ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW HRM_MARKER_MIDDY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -437,9 +451,9 @@
       #ifdef LAYER_LeftIndex
       LeftIndex {
         bindings = <
-          ___ ___ ___ ___ YLW ___                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW HRM_MARKER_INDEX                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -451,9 +465,9 @@
       #ifdef LAYER_RightIndex
       RightIndex {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ YLW ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_INDEX YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -465,9 +479,9 @@
       #ifdef LAYER_RightMiddy
       RightMiddy {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ GRN ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_MIDDY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -479,9 +493,9 @@
       #ifdef LAYER_RightRingy
       RightRingy {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ CYN ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_RINGY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -493,9 +507,9 @@
       #ifdef LAYER_RightPinky
       RightPinky {
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ MAJ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_PINKY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             LAC ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -1563,6 +1577,7 @@ conditional_layers {
     };
     #endif
   #endif
+
   #endif
 };
 
