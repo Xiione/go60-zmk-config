@@ -195,6 +195,7 @@
 #define LAYER_Mouse_warp 28
 #define LAYER_Mouse_to_scroll 29
 #define LAYER_Magic 30
+#define LAYER_Mouse_auto 31
 
 #define SHOW_HRM_INDICATORS // show HRM-colored markers on both halves
 
@@ -602,6 +603,20 @@
       };
       #endif
 
+      #ifdef LAYER_Mouse_auto
+      MouseAuto {
+        bindings = <
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
+                  ___ ___ ___                                             ___ ___ ___
+                              GDN GDN ___                     ___ ___ ___
+        >;
+        layer-id = <LAYER_Mouse_auto>;
+      };
+      #endif
+
       #ifdef LAYER_Mouse_fast
       MouseFast {
         bindings = <
@@ -804,10 +819,13 @@
   #undef FIN
 #endif
 
+&glidepoint {
+    sensitivity = "1x";
+};
 
 /* Input Listeners */
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>;
+    input-processors = <&zip_temp_layer LAYER_Mouse_auto 400>, <&zip_xy_scaler 3 1>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
         input-processors = <&zip_xy_scaler 3 2>;
@@ -827,7 +845,7 @@
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_scaler 1 10>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
+    input-processors = <&zip_xy_scaler 1 4>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
         input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
@@ -10735,7 +10753,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
+                                                                                                                                                   &mkp RCLK  &mkp LCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10823,7 +10841,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
+                                                                                                                                                   &mkp RCLK  &mkp LCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10834,7 +10852,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
+                                                                                                                                                   &mkp RCLK  &mkp LCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10845,7 +10863,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
+                                                                                                                                                   &mkp RCLK  &mkp LCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10856,7 +10874,7 @@ HOME_ROW_INDICATOR_PASSTHRU
  &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
                      &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
                                                                   &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp LCLK  &mkp RCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
+                                                                                                                                                   &mkp RCLK  &mkp LCLK  &mkp MCLK   &none   &none  &tog LAYER_Mouse
             >;
         };
 
@@ -10868,6 +10886,17 @@ HOME_ROW_INDICATOR_PASSTHRU
  &out OUT_TOG       &bt BT_CLR            &bt_0            &bt_1            &bt_2            &bt_3                                                                            &none         &to 0         &to 1   &none  &bt BT_CLR_ALL  &out OUT_TOG
                                    &out OUT_USB            &none            &none                                                                                                           &none         &none   &none
                                                                                                      &none   &none  &tog LAYER_macOS  &tog LAYER_macOS   &none   &none
+            >;
+        };
+
+        layer_Mouse_auto {
+            bindings = <
+                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
+                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
+ &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
+                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
+                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
+                                                                                                                                                   &mkp RCLK  &mkp LCLK &kp ESC    &none   &none  &none
             >;
         };
 
