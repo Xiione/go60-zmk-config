@@ -387,7 +387,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <0>;
@@ -400,7 +400,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ GRN CYN MAJ YLW ___                                     ___ YLW MAJ CYN GRN ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_macOS>;
@@ -414,7 +414,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW HRM_MARKER_PINKY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftPinky>;
@@ -428,7 +428,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW HRM_MARKER_RINGY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftRingy>;
@@ -442,7 +442,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW HRM_MARKER_MIDDY                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftMiddy>;
@@ -456,7 +456,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW HRM_MARKER_INDEX                        ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_LeftIndex>;
@@ -470,7 +470,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                        HRM_MARKER_INDEX YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightIndex>;
@@ -484,7 +484,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                        HRM_MARKER_MIDDY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightMiddy>;
@@ -498,7 +498,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                        HRM_MARKER_RINGY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightRingy>;
@@ -512,7 +512,7 @@
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
           ___ MAJ CYN GRN YLW ___                        HRM_MARKER_PINKY YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
-                  ___ ___ ___                                             LAC ___ ___
+                  ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
         >;
         layer-id = <LAYER_RightPinky>;
