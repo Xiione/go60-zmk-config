@@ -856,7 +856,7 @@
 
 /* Input Listeners */
 &cirque_rh_listener {
-    input-processors = <&zip_temp_layer LAYER_Mouse_auto 400>, <&zip_xy_scaler 3 1>;
+    input-processors = <&zip_temp_layer LAYER_Mouse_auto 300>, <&zip_xy_scaler 3 1>;
     layer_Mouse_slow {
         layers = <LAYER_Mouse_slow>;
         input-processors = <&zip_xy_scaler 3 2>;
