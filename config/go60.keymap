@@ -10385,7 +10385,7 @@ macros {
 // https://zmk.dev/docs/keymaps/input-processors/scaler
 //
 #ifndef MOUSE_MOTION_SCALER_FAST
-#define MOUSE_MOTION_SCALER_FAST 4 1
+#define MOUSE_MOTION_SCALER_FAST 3 1
 #endif
 
 //
