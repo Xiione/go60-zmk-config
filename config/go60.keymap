@@ -255,6 +255,16 @@
       defined(PNK) || defined(PNK_RGB) || \
       defined(WHT) || defined(WHT_RGB) || \
       defined(BLK) || defined(BLK_RGB) || \
+      defined(GOL0) || defined(GOL0_RGB) || \
+      defined(GOL1) || defined(GOL1_RGB) || \
+      defined(GOL2) || defined(GOL2_RGB) || \
+      defined(GOL3) || defined(GOL3_RGB) || \
+      defined(GOL4) || defined(GOL4_RGB) || \
+      defined(GOL5) || defined(GOL5_RGB) || \
+      defined(GOL6) || defined(GOL6_RGB) || \
+      defined(GOL7) || defined(GOL7_RGB) || \
+      defined(GOL8) || defined(GOL8_RGB) || \
+      defined(GOL9) || defined(GOL9_RGB) || \
       defined(___) || \
       defined(DUG) || defined(DUG_RGB) || \
       defined(LAC) || defined(LAC_RGB) || \
@@ -273,6 +283,17 @@
   #define ORN_RGB 0xFF8000 // #FF8000 ORANGE   => ORN (ornj)
   #define GDN_RGB 0xD9A521 // #D9A521 GOLDNROD => GDN (gold'nrod)
   #define GOL_RGB 0xFFD900 // #FFD900 GOLD     => GOL (gold)
+  // Number-layer gold shades: digit 0 is darkest; digit 9 is base GOL.
+  #define GOL0_RGB 0x4C4100 // #4C4100 GOL 30%
+  #define GOL1_RGB 0x605200 // #605200 GOL 38%
+  #define GOL2_RGB 0x746300 // #746300 GOL 46%
+  #define GOL3_RGB 0x887400 // #887400 GOL 53%
+  #define GOL4_RGB 0x9C8500 // #9C8500 GOL 61%
+  #define GOL5_RGB 0xB09500 // #B09500 GOL 69%
+  #define GOL6_RGB 0xC3A600 // #C3A600 GOL 77%
+  #define GOL7_RGB 0xD7B700 // #D7B700 GOL 84%
+  #define GOL8_RGB 0xEBC800 // #EBC800 GOL 92%
+  #define GOL9_RGB 0xFFD900 // #FFD900 GOL 100%
   #define YLW_RGB 0xFFFF00 // #FFFF00 YELLOW   => YLW (yellow)
   #define CHU_RGB 0x80FF00 // #80FF00 CHARTRSE => CHU (chartreuse)
   #define GRN_RGB 0x00FF00 // #00FF00 GREEN    => GRN (green)
@@ -303,6 +324,16 @@
   #define ORN &ug ORN_RGB
   #define GDN &ug GDN_RGB
   #define GOL &ug GOL_RGB
+  #define GOL0 &ug GOL0_RGB
+  #define GOL1 &ug GOL1_RGB
+  #define GOL2 &ug GOL2_RGB
+  #define GOL3 &ug GOL3_RGB
+  #define GOL4 &ug GOL4_RGB
+  #define GOL5 &ug GOL5_RGB
+  #define GOL6 &ug GOL6_RGB
+  #define GOL7 &ug GOL7_RGB
+  #define GOL8 &ug GOL8_RGB
+  #define GOL9 &ug GOL9_RGB
   #define YLW &ug YLW_RGB
   #define CHU &ug CHU_RGB
   #define GRN &ug GRN_RGB
@@ -536,12 +567,12 @@
       #ifdef LAYER_Number
       Number {
         bindings = <
-          SPG COR COR COR COR SPG                                     TEA SPG SPG SPG SPG SPG
-          GDN COR COR COR COR GOL                                     TEA GOL GOL GOL SPG SPG
-          YLW MAJ CYN GRN YLW TEA                                     TEA GOL GOL GOL SPG SPG
-          PUR SPG SPG SPG PUR GDN                                     TEA GOL GOL GOL SPG SPG
+          GOL9 COR COR COR COR GOL0                                   TEA GOL3 GOL4 GOL6 SPG GOL1
+          GDN COR COR COR COR GOL0                                   TEA GOL7 GOL8 GOL9 SPG GOL5
+          YLW MAJ CYN GRN YLW TEA                                     TEA GOL4 GOL5 GOL6 SPG SPG
+          PUR SPG SPG SPG PUR GDN                                     TEA GOL1 GOL2 GOL3 SPG SPG
                   PUR PUR PUR                                             SPG SPG SPG
-                              RED TEA SPG                     SPG GOL SPG
+                              RED TEA GOL2                     SPG GOL0 SPG
         >;
         layer-id = <LAYER_Number>;
       };
