@@ -1152,9 +1152,9 @@
   #define KEY_LH_C6R3 0
   #define KEY_LH_C5R3 Q
   #define KEY_LH_C4R3 Y
-  #define KEY_LH_C3R3 O
-  #define KEY_LH_C2R3 U
-  #define KEY_LH_C1R3 EQUAL
+  #define KEY_LH_C3R3 U
+  #define KEY_LH_C2R3 O
+  #define KEY_LH_C1R3 SEMI
   #define KEY_RH_C1R3 X
   #define KEY_RH_C2R3 L
   #define KEY_RH_C3R3 D
@@ -1164,9 +1164,9 @@
   #define KEY_LH_C6R4 B
   #define KEY_LH_C5R4 C
   #define KEY_LH_C4R4 I
-  #define KEY_LH_C3R4 A
-  #define KEY_LH_C2R4 E
-  #define KEY_LH_C1R4 MINUS
+  #define KEY_LH_C3R4 E
+  #define KEY_LH_C2R4 A
+  #define KEY_LH_C1R4 COMMA
   #define KEY_RH_C1R4 K
   #define KEY_RH_C2R4 H
   #define KEY_RH_C3R4 T
@@ -1175,9 +1175,9 @@
   #define KEY_RH_C6R4 W
   #define KEY_LH_C6R5 LSFT
   #define KEY_LH_C5R5 SQT
-  #define KEY_LH_C4R5 COMMA
-  #define KEY_LH_C3R5 DOT
-  #define KEY_LH_C2R5 SEMI
+  #define KEY_LH_C4R5 MINUS
+  #define KEY_LH_C3R5 EQUAL
+  #define KEY_LH_C2R5 DOT
   #define KEY_LH_C1R5 FSLH
   #define KEY_LH_T1 ESC
   #define LAY_LH_T1 LAYER_Function
@@ -10550,9 +10550,9 @@ macros {
         layer_Enthium {
             bindings = <
          &magic LAYER_Magic 0                         &kp N1                         &kp N2                         &kp N3                         &kp N4     &kp N5                                                                                                                                                                 &kp N6                          &kp N7                          &kp N8                          &kp N9                          &kp N0          &magic LAYER_Magic 0
-              &mt GLOBE GRAVE                          &kp Q                          &kp Y                          &kp O                          &kp U  &kp EQUAL                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                &mt GLOBE BSLH
-                        &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (A, LAYER_Enthium)  &LeftIndex (E, LAYER_Enthium)  &kp MINUS                                                                                                                                                                  &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
- &sticky_key_modtap LSFT LSFT                        &kp SQT                      &kp COMMA                        &kp DOT                       &kp SEMI   &kp FSLH                                                                                                                                                                  &kp J                           &kp M                           &kp G                           &kp F                           &kp V  &sticky_key_modtap RSFT RSFT
+              &mt GLOBE GRAVE                          &kp Q                          &kp Y                          &kp U                          &kp O   &kp SEMI                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                &mt GLOBE BSLH
+                        &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (E, LAYER_Enthium)  &LeftIndex (A, LAYER_Enthium)  &kp COMMA                                                                                                                                                                  &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
+ &sticky_key_modtap LSFT LSFT                        &kp SQT                      &kp MINUS                      &kp EQUAL                        &kp DOT   &kp FSLH                                                                                                                                                                  &kp J                           &kp M                           &kp G                           &kp F                           &kp V  &sticky_key_modtap RSFT RSFT
                                                                                &parang_left                  &parang_right                        &kp DEL                                                                                                                                                                                           &stumb LAYER_World RSFT                        &kp LBKT                        &kp RBKT
                                                                                                                                                                       &thumb LAYER_Number TAB  &thumb LAYER_Cursor SPACE  &thumb LAYER_Function ESC  &thumb LAYER_System ENTER  &space LAYER_Symbol R  &thumb LAYER_Mouse BACKSPACE
             >;
