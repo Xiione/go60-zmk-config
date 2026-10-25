@@ -4,3 +4,7 @@
 [submodule "modules/zmk-hid-viz"]
 	path = modules/zmk-hid-viz
 	url = https://github.com/ovandongen/zmk-hid-viz.git
+[submodule "tools/zmk-layout-rs"]
+	path = tools/zmk-layout-rs
+	url = https://github.com/Xiione/zmk-layout-rs.git
+	branch = xiione/go60-editor-export
