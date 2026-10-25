@@ -1780,7 +1780,7 @@ behaviors {
   // when you raise this value, you should be able to type normally again.
   //
   #ifndef TAPPING_RESOLUTION
-  #define TAPPING_RESOLUTION 150
+  #define TAPPING_RESOLUTION 130
   #endif
 
   //
