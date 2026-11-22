@@ -8,3 +8,6 @@
 	path = tools/zmk-layout-rs
 	url = https://github.com/Xiione/zmk-layout-rs.git
 	branch = xiione/go60-editor-export
+[submodule "modules/zmk-input-processor-scroll-inertia"]
+	path = modules/zmk-input-processor-scroll-inertia
+	url = https://github.com/mjmjm0101/zmk-input-processor-scroll-inertia.git
