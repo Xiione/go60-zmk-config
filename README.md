@@ -10,6 +10,65 @@ These steps will get you using your keymap on your keyboard in the fastest time 
 
 If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
 
+## Custom layout
+
+This configuration uses the Enthium v15a typing layout from
+[sunaku's development snapshot](https://my.moergo.com/glove80/#/layout/user/a590b975-1dde-4354-b118-25f0d8dbc87b),
+adapted to Go60:
+
+```text
+       Q Y U O ;     X L D P Z
+     B C I E A ,     K H T N S W
+ Shift ' - = . /     J M G F V Shift
+```
+
+The six thumb keys retain their existing tap/hold assignments, shown left to right:
+
+```text
+Left:  Tab/Number    Space/Cursor    Esc/Function
+Right: Enter/System R/Symbol        Backspace/Mouse
+```
+
+Home row modifiers stay on the same fingers, so the left middle finger now taps E
+and the left index taps A. The extra-row parentheses and brackets, combos,
+and the 130 ms tapping resolution are retained. Keyboard
+mouse-emulation Fast speed is 3x, and Function has Play/Pause beside Previous/Next.
+
+Moving the right trackpad activates Mouse_auto for 300 ms. The first two left
+thumb keys glow gold and send right-click and left-click, respectively. All
+other keys and lighting inherit from the active layers underneath.
+
+`config/go60.keymap` is the firmware source; `go60-editor.json` contains the matching
+v15a typing bindings for import into the Go60 Layout Editor. After flashing, check
+ordinary typing, Typing mode, macOS modifiers, thumb rolls, and common programming
+punctuation before judging comfort and speed.
+
+## Regenerating the editor export
+
+Initialize the repository's pinned submodules after cloning:
+
+```sh
+git submodule update --init --recursive
+```
+
+Successful `./build.sh` runs regenerate `go60-editor.json` automatically after
+building the firmware. To export without building firmware, run:
+
+```sh
+./export-editor-json.sh
+```
+
+The standalone exporter works from any working directory. It requires Rust/Cargo,
+`clang`, `jq`, `uuidgen`, and `trash` on the host. Existing UUID and date fields are
+reused to avoid metadata-only changes; a missing export receives fresh metadata.
+Generation failures preserve the previous export and cause `build.sh` to fail.
+Incremental builds and GitHub Actions retain their existing behavior.
+
+The exporter comes from `tools/zmk-layout-rs`, pinned to a commit on the fork's
+`xiione/go60-editor-export` branch. Builds do not fetch or advance that pin;
+updating the submodule is an explicit maintenance step. Keep `go60-editor.json`
+under version control alongside the keymap.
+
 ## Resources
 - The [official MoErgo Go60 Support](https://moergo.com/go60-support) web site. Go60 documentation and other technical resources.
 - The [official MoErgo Discord Server](https://moergo.com/discord). Instant conversations with other Go60 users.
