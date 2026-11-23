@@ -1,11 +1,12 @@
 { pkgs ?  import <nixpkgs> {}
 , firmware ? import ../src {}
+, leftOnly ? false
 }:
 
 let
   config = ./.;
 
-  go60_left = (firmware.zmk.override {
+  go60_left = firmware.zmk.override {
     board = "go60_lh";
     shield = "raw_hid_adapter";
     keymap = "${config}/go60_lh.keymap";
@@ -15,10 +16,12 @@ let
       ../modules/zmk-hid-viz
       ../modules/zmk-input-processor-scroll-inertia
     ];
-  }).overrideAttrs (previous: {
-    # Upstream ZMK PR 3483. Nix applies this from the app source root.
-    patches = (previous.patches or []) ++ [ ./patches/zmk-scroll-resolution.patch ];
-  });
+  };
   go60_right = firmware.zmk.override { board = "go60_rh"; keymap = "${config}/go60.keymap"; kconfig = "${config}/go60_rh.conf"; };
 
-in firmware.combine_uf2 go60_left go60_right "go60"
+in if leftOnly then go60_left else (firmware.combine_uf2 go60_left go60_right "go60").overrideAttrs (old: {
+  buildCommand = old.buildCommand + ''
+    ln -s ${go60_left} $out/lh
+    ln -s ${go60_right} $out/rh
+  '';
+})

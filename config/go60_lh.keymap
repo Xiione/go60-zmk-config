@@ -1,25 +1,8 @@
 #include "go60.keymap"
 
-/ {
-    left_scroll_inertia: left_scroll_inertia {
-        compatible = "zmk,input-processor-scroll-inertia";
-        #input-processor-cells = <0>;
-        axis = <0>;
-        // Short Cirque swipes need a lower trigger than the trackball defaults.
-        start = <8>;
-        move = <24>;
-        min-events = <4>;
-        stop = <2>;
-        // Match the live scroll scaler because inertia sends its own HID reports.
-        scale = <1>;
-        scale-div = <3>;
-    };
-};
-
 &cirque_lh_listener {
     input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                        <&zip_xy_to_scroll_mapper>,
-                       <&left_scroll_inertia>,
-                       <&zip_scroll_scaler 1 3>,
+                       <&zip_scroll_scaler 1 2>,
                        <&zip_click_to_right_click_mapper>;
 };

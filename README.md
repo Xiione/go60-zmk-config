@@ -10,6 +10,8 @@ These steps will get you using your keymap on your keyboard in the fastest time 
 
 If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
 
+The [Go60 development guide](AGENTS.md) lists the daily, tuning and pad-probe build commands. The [experiment log](docs/cirque-experiments.md) records the tested settings and original capture provenance.
+
 ## Custom layout
 
 This configuration uses the Enthium v15a typing layout from

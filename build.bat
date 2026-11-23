@@ -1,20 +1,7 @@
 @echo off
-
-setlocal enabledelayedexpansion
-
+setlocal
 set IMAGE=go60-zmk-config-docker
-
-:: Set branch name from first parameter, default to main if not provided
-if "%~1"=="" (
-	set BRANCH=main
-) else (
-	set BRANCH=%~1
-)
-
-:: Build Docker image
-docker build -t "%IMAGE%" .
-
-:: Run Docker container
-docker run --rm -v "%cd%:/config" -e UID=0 -e GID=0 -e BRANCH="%BRANCH%" "%IMAGE%"
-
-endlocal
+if not "%~1"=="" set "ZMK_REF=%~1"
+docker build -t "%IMAGE%" . || exit /b 1
+docker run --rm -v "%cd%:/config" -e ZMK_REPOSITORY -e ZMK_REF "%IMAGE%"
+exit /b %ERRORLEVEL%

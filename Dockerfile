@@ -23,24 +23,4 @@ RUN <<EOF
     done
 EOF
 
-COPY --chmod=755 <<EOF /bin/entrypoint.sh
-#!/usr/bin/env bash
-    set -euo pipefail
-    : "\${ZMK_REPOSITORY:=moergo-sc/zmk}"
-    : "\${ZMK_REF:=refs/pull/36/head}"
-
-    echo "Checking out \$ZMK_REF from \$ZMK_REPOSITORY" >&2
-    cd /src
-    git remote set-url origin "https://github.com/\$ZMK_REPOSITORY"
-    git fetch origin "\$ZMK_REF"
-    git checkout -q --detach FETCH_HEAD
-
-    echo 'Building Go60 firmware' >&2
-    cd /config
-    nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace
-    install -o "\$UID" -g "\$GID" /tmp/combined/go60.uf2 ./go60.uf2
-EOF
-
-ENTRYPOINT ["/bin/entrypoint.sh"]
-
-# Run build.sh to use this file
+ENTRYPOINT ["bash", "/config/tools/firmware/build-daily.sh"]
