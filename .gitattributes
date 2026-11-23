@@ -3,3 +3,8 @@
 # Normalise line endings for Dockerfile and shell scripts
 *.sh text eol=lf
 Dockerfile text eol=lf
+
+# Bash sources the pin in Linux containers, including from Windows checkouts.
+firmware.env text eol=lf
+# Unified diffs represent empty context lines with one space.
+*.patch whitespace=-blank-at-eol

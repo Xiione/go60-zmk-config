@@ -1,0 +1,70 @@
+--- a/drivers/input/input_pinnacle.c
++++ b/drivers/input/input_pinnacle.c
+@@ -229,66 +229,7 @@
+     return ret;
+ }
+ 
+-static void pinnacle_report_data(const struct device *dev) {
+-    const struct pinnacle_config *config = dev->config;
+-    uint8_t packet[3];
+-    int ret;
+-    ret = pinnacle_seq_read(dev, PINNACLE_STATUS1, packet, 1);
+-    if (ret < 0) {
+-        LOG_ERR("read status: %d", ret);
+-        return;
+-    }
+-
+-    LOG_HEXDUMP_DBG(packet, 1, "Pinnacle Status1");
+-
+-    // Ignore 0xFF packets that indicate communcation failure, or if SW_DR isn't asserted
+-    if (packet[0] == 0xFF || !(packet[0] & PINNACLE_STATUS1_SW_DR)) {
+-        return;
+-    }
+-    ret = pinnacle_seq_read(dev, PINNACLE_2_2_PACKET0, packet, 3);
+-    if (ret < 0) {
+-        LOG_ERR("read packet: %d", ret);
+-        return;
+-    }
+-
+-    LOG_HEXDUMP_DBG(packet, 3, "Pinnacle Packets");
+-
+-    struct pinnacle_data *data = dev->data;
+-    uint8_t btn = packet[0] &
+-                  (PINNACLE_PACKET0_BTN_PRIM | PINNACLE_PACKET0_BTN_SEC | PINNACLE_PACKET0_BTN_AUX);
+-
+-    int8_t dx = (int8_t)packet[1];
+-    int8_t dy = (int8_t)packet[2];
+-
+-    if (packet[0] & PINNACLE_PACKET0_X_SIGN) {
+-        WRITE_BIT(dx, 7, 1);
+-    }
+-    if (packet[0] & PINNACLE_PACKET0_Y_SIGN) {
+-        WRITE_BIT(dy, 7, 1);
+-    }
+-
+-    if (data->in_int) {
+-        LOG_DBG("Clearing status bit");
+-        ret = pinnacle_clear_status(dev);
+-        data->in_int = true;
+-    }
+-
+-    if (!config->no_taps && (btn || data->btn_cache)) {
+-        for (int i = 0; i < 3; i++) {
+-            uint8_t btn_val = btn & BIT(i);
+-            if (btn_val != (data->btn_cache & BIT(i))) {
+-                input_report_key(dev, INPUT_BTN_0 + i, btn_val ? 1 : 0, false, K_FOREVER);
+-            }
+-        }
+-    }
+-
+-    data->btn_cache = btn;
+-
+-    input_report_rel(dev, INPUT_REL_X, dx, false, K_FOREVER);
+-    input_report_rel(dev, INPUT_REL_Y, dy, true, K_FOREVER);
+-
+-    return;
+-}
++#include "pad_probe.h"
+ 
+ static void pinnacle_work_cb(struct k_work *work) {
+     struct pinnacle_data *data = CONTAINER_OF(work, struct pinnacle_data, work);

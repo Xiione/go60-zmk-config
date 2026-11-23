@@ -2,10 +2,6 @@ name: Build
 
 on: [push, pull_request, workflow_dispatch]
 
-env:
-  ZMK_REPOSITORY: moergo-sc/zmk
-  ZMK_REF: refs/pull/36/head
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,10 +9,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Test capture and reports
+        run: |
+          python3 -m unittest discover -s tools/pad-probe
+          python3 -m unittest discover -s tools/scroll-tuning
+      - name: Load pinned firmware
+        run: cat firmware.env >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
-          repository: ${{ env.ZMK_REPOSITORY }}
-          ref: ${{ env.ZMK_REF }}
+          repository: ${{ env.FIRMWARE_REPOSITORY }}
+          ref: ${{ env.FIRMWARE_REVISION }}
           path: src
       - uses: cachix/install-nix-action@v25
         with:
@@ -28,9 +30,20 @@ jobs:
       - name: Build Go60 combined firmware
         run: nix-build config -o combined
       - name: Copy result out of nix store
-        run: cp combined/go60.uf2 go60.uf2
+        run: |
+          cp combined/go60.uf2 go60.uf2
+          python3 tools/firmware/manifest.py daily combined go60.uf2 src
+      - name: Verify both probe boards
+        run: |
+          nix-build tools/pad-probe --arg firmware 'import ./src {}' --arg pkgs 'import ./src/nix/pinned-nixpkgs.nix {}' -o probes
+          for side in lh rh; do
+            cp "probes/go60-$side-pad-probe.uf2" .
+            python3 tools/firmware/manifest.py probe probes "go60-$side-pad-probe.uf2" src
+          done
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: go60.uf2
-          path: go60.uf2
+          path: |
+            go60.uf2
+            go60.manifest.json

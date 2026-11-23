@@ -1,2 +1,4 @@
 *~
 *.uf2
+/go60*.manifest.json
+__pycache__/
