@@ -197,7 +197,7 @@
 #define LAYER_Magic 30
 #define LAYER_Mouse_auto 31
 
-#define SHOW_HRM_INDICATORS // show HRM-colored markers on both halves
+#define SHOW_HRM_INDICATORS // show the active HRM on the innermost top-row key
 
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 #ifndef LAYER_Lower
@@ -441,9 +441,9 @@
       #ifdef LAYER_LeftPinky
       LeftPinky {
         bindings = <
+          ___ ___ ___ ___ ___ HRM_MARKER_PINKY                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW HRM_MARKER_PINKY                        ___ YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -455,9 +455,9 @@
       #ifdef LAYER_LeftRingy
       LeftRingy {
         bindings = <
+          ___ ___ ___ ___ ___ HRM_MARKER_RINGY                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW HRM_MARKER_RINGY                        ___ YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -469,9 +469,9 @@
       #ifdef LAYER_LeftMiddy
       LeftMiddy {
         bindings = <
+          ___ ___ ___ ___ ___ HRM_MARKER_MIDDY                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW HRM_MARKER_MIDDY                        ___ YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -483,9 +483,9 @@
       #ifdef LAYER_LeftIndex
       LeftIndex {
         bindings = <
+          ___ ___ ___ ___ ___ HRM_MARKER_INDEX                                     ___ ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW HRM_MARKER_INDEX                        ___ YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -497,9 +497,9 @@
       #ifdef LAYER_RightIndex
       RightIndex {
         bindings = <
+          ___ ___ ___ ___ ___ ___                                     HRM_MARKER_INDEX ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_INDEX YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -511,9 +511,9 @@
       #ifdef LAYER_RightMiddy
       RightMiddy {
         bindings = <
+          ___ ___ ___ ___ ___ ___                                     HRM_MARKER_MIDDY ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_MIDDY YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -525,9 +525,9 @@
       #ifdef LAYER_RightRingy
       RightRingy {
         bindings = <
+          ___ ___ ___ ___ ___ ___                                     HRM_MARKER_RINGY ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_RINGY YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -539,9 +539,9 @@
       #ifdef LAYER_RightPinky
       RightPinky {
         bindings = <
+          ___ ___ ___ ___ ___ ___                                     HRM_MARKER_PINKY ___ ___ ___ ___ ___
           ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ MAJ CYN GRN YLW ___                        HRM_MARKER_PINKY YLW GRN CYN MAJ ___
+          ___ MAJ CYN GRN YLW ___                                     ___ YLW GRN CYN MAJ ___
           YLW ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ YLW
                   ___ ___ ___                                             ___ ___ ___
                               LAC LAC LAC                     LAC LAC LAC
@@ -636,13 +636,14 @@
 
       #ifdef LAYER_Mouse_auto
       MouseAuto {
+        // Highlight the click thumbs and inherit the rest of the lighting.
         bindings = <
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-          ___ ___ ___ ___ ___ ___                                     ___ ___ ___ ___ ___ ___
-                  ___ ___ ___                                             ___ ___ ___
-                              GDN GDN ___                     ___ ___ ___
+          &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans       &trans &trans &trans
+                           GDN    GDN &trans       &trans &trans &trans
         >;
         layer-id = <LAYER_Mouse_auto>;
       };
@@ -1152,8 +1153,8 @@
   #define KEY_LH_C6R3 0
   #define KEY_LH_C5R3 Q
   #define KEY_LH_C4R3 Y
-  #define KEY_LH_C3R3 U
-  #define KEY_LH_C2R3 O
+  #define KEY_LH_C3R3 O
+  #define KEY_LH_C2R3 U
   #define KEY_LH_C1R3 SEMI
   #define KEY_RH_C1R3 X
   #define KEY_RH_C2R3 L
@@ -1164,8 +1165,8 @@
   #define KEY_LH_C6R4 B
   #define KEY_LH_C5R4 C
   #define KEY_LH_C4R4 I
-  #define KEY_LH_C3R4 E
-  #define KEY_LH_C2R4 A
+  #define KEY_LH_C3R4 A
+  #define KEY_LH_C2R4 E
   #define KEY_LH_C1R4 COMMA
   #define KEY_RH_C1R4 K
   #define KEY_RH_C2R4 H
@@ -10550,8 +10551,8 @@ macros {
         layer_Enthium {
             bindings = <
          &magic LAYER_Magic 0                         &kp N1                         &kp N2                         &kp N3                         &kp N4     &kp N5                                                                                                                                                                 &kp N6                          &kp N7                          &kp N8                          &kp N9                          &kp N0          &magic LAYER_Magic 0
-              &mt GLOBE GRAVE                          &kp Q                          &kp Y                          &kp U                          &kp O   &kp SEMI                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                &mt GLOBE BSLH
-                        &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (E, LAYER_Enthium)  &LeftIndex (A, LAYER_Enthium)  &kp COMMA                                                                                                                                                                  &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
+              &mt GLOBE GRAVE                          &kp Q                          &kp Y                          &kp O                          &kp U   &kp SEMI                                                                                                                                                                  &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                &mt GLOBE BSLH
+                        &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (A, LAYER_Enthium)  &LeftIndex (E, LAYER_Enthium)  &kp COMMA                                                                                                                                                                  &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
  &sticky_key_modtap LSFT LSFT                        &kp SQT                      &kp MINUS                      &kp EQUAL                        &kp DOT   &kp FSLH                                                                                                                                                                  &kp J                           &kp M                           &kp G                           &kp F                           &kp V  &sticky_key_modtap RSFT RSFT
                                                                                &parang_left                  &parang_right                        &kp DEL                                                                                                                                                                                           &stumb LAYER_World RSFT                        &kp LBKT                        &kp RBKT
                                                                                                                                                                       &thumb LAYER_Number TAB  &thumb LAYER_Cursor SPACE  &thumb LAYER_Function ESC  &thumb LAYER_System ENTER  &space LAYER_Symbol R  &thumb LAYER_Mouse BACKSPACE
@@ -10921,13 +10922,14 @@ HOME_ROW_INDICATOR_PASSTHRU
         };
 
         layer_Mouse_auto {
+            // Right trackpad movement only overrides the first two left thumb keys.
             bindings = <
-                  &mkp MB5                   &none                   &none                 &none                    &none                   &none                                                                                      &none                 &none                 &none                 &none                    &none                   &mkp MB5
-                  &mkp MB4                   &none  &msc MOUSE_SCROLL_LEFT          &mmv MOVE_UP  &msc MOUSE_SCROLL_RIGHT                   &none                                                                     &msc MOUSE_SCROLL_LEFT             &mkp LCLK          &mmv MOVE_UP             &mkp RCLK  &msc MOUSE_SCROLL_RIGHT                   &mkp MB4
- &mo LAYER_Mouse_to_scroll    &msc MOUSE_SCROLL_UP          &mmv MOVE_LEFT        &mmv MOVE_DOWN          &mmv MOVE_RIGHT    &msc MOUSE_SCROLL_UP                                                                       &msc MOUSE_SCROLL_UP        &mmv MOVE_LEFT        &mmv MOVE_DOWN       &mmv MOVE_RIGHT                &mkp MCLK  &mo LAYER_Mouse_to_scroll
-                     &none  &msc MOUSE_SCROLL_DOWN    &mo LAYER_Mouse_slow  &mo LAYER_Mouse_warp     &mo LAYER_Mouse_fast  &msc MOUSE_SCROLL_DOWN                                                                     &msc MOUSE_SCROLL_DOWN  &mo LAYER_Mouse_fast  &mo LAYER_Mouse_warp  &mo LAYER_Mouse_slow      &kp RIGHT_PINKY_MOD                  &kp K_APP
-                                                                  &kp _CUT             &kp _COPY               &kp _PASTE                                                                                                                      &kp RIGHT_INDEX_MOD   &kp RIGHT_MIDDY_MOD   &kp RIGHT_RINGY_MOD
-                                                                                                                                                   &mkp RCLK  &mkp LCLK &kp ESC    &none   &none  &none
+                &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
+                              &trans &trans &trans       &trans &trans &trans
+                              &mkp RCLK &mkp LCLK &trans       &trans &trans &trans
             >;
         };
 

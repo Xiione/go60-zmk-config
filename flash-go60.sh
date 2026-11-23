@@ -66,7 +66,7 @@ add_volume /Volumes/GO60RHBOOT
 shopt -s nullglob
 for volume in /Volumes/GO60*BOOT; do
   case "$(basename "$volume")" in
-    GO60LHBOOT|GO60RHBOOT) add_volume "$volume" ;;
+  GO60LHBOOT | GO60RHBOOT) add_volume "$volume" ;;
   esac
 done
 shopt -u nullglob
@@ -83,7 +83,7 @@ for volume in "${volumes[@]}"; do
   printf 'Flashing %s...\n' "$(basename "$volume")"
 
   # -X avoids writing extended attributes/resource forks to UF2 bootloaders.
-  if cp -X "$firmware" "$volume/"; then
+  if /bin/cp -X "$firmware" "$volume/"; then
     if ! sync; then
       printf 'warning: sync failed after flashing %s; continuing\n' "$(basename "$volume")" >&2
       failures=$((failures + 1))
@@ -93,15 +93,15 @@ for volume in "${volumes[@]}"; do
       printf 'warning: failed to copy firmware to %s; continuing\n' "$(basename "$volume")" >&2
       failures=$((failures + 1))
     else
-      printf 'warning: copy to %s reported failure after the volume disappeared; treating as likely flashed\n' "$(basename "$volume")" >&2
+      printf 'warning: copy to %s reported failure after the volume disappeared\n' "$(basename "$volume")" >&2
     fi
   fi
 
   if eject_volume "$volume"; then
     printf 'Done: %s\n' "$(basename "$volume")"
   else
-    printf 'warning: copied firmware, but could not eject %s cleanly\n' "$(basename "$volume")" >&2
-    printf 'warning: macOS may still show a "disk not ejected properly" notification\n' >&2
+    printf 'warning: could not eject %s\n' "$(basename "$volume")" >&2
+    printf 'warning: macOS may show a "disk not ejected properly" notification\n' >&2
     failures=$((failures + 1))
   fi
 done
